@@ -1,21 +1,32 @@
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
-import styled from 'styled-components/native'
+import Header from './widgets/Header'
+import * as Font from 'expo-font'
+import { useEffect, useState } from 'react'
 
-const Post = styled.View`
-   background-color: red;
-   height: 100px;
-   width: 100px;
-   border-radius: 15px;
-   margin-bottom: 20px;
-`
+const loadFonts = async () => {
+   await Font.loadAsync({
+      'baloo-extraBold': require('./fonts/BalooTamma2-ExtraBold.ttf')
+   });
+};
 
 export default function App() {
+   const [fontsLoaded, setFontsLoaded] = useState(false);
+
+   useEffect(() => {
+      const loadAppFonts = async () => {
+         await loadFonts();
+         setFontsLoaded(true);
+      };
+
+      loadAppFonts();
+   }, []);
+
+   if (!fontsLoaded) {
+      return null;
+   }
+
    return (
-      <View>
-         <Post>
-            <Text>text</Text>
-         </Post>
-      </View>
+      <Header/>
    )
 }
+
+
