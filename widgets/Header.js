@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar'
 import { SafeAreaView, StyleSheet, Image, Text, TouchableHighlight, View } from 'react-native'
 import React from 'react'
 
@@ -6,13 +5,15 @@ import React from 'react'
 export default function Header() {
    return (
       <SafeAreaView style={styles.mainBlock}>
-         <TouchableHighlight>
-            <Image source={require('../assets/notification-icon.png')} />
-         </TouchableHighlight>
-         <Text style={styles.text}>Anitopia</Text>
-         <TouchableHighlight>
-            <Image style={styles.avatar} source={require('../assets/avatar.jpg')} />
-         </TouchableHighlight>
+         <View style={styles.blockWithElements}>
+            <TouchableHighlight>
+               <Image source={require('../assets/notification-icon.png')} />
+            </TouchableHighlight>
+            <Text style={styles.name}>Anitopia</Text>
+            <TouchableHighlight>
+               <Image style={styles.avatar} source={require('../assets/avatar.jpg')} />
+            </TouchableHighlight>
+         </View>
       </SafeAreaView>
    )
 }
@@ -21,16 +22,22 @@ const styles = StyleSheet.create({
    mainBlock : {
       width: '100%',
       height: 110,
-      paddingLeft: '30px',
-      paddingRight: '30px',
       backgroundColor: '#343A40',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center'
+      borderBottomWidth: 5,
+      borderColor: '#FF6666'
    },
 
-   text : {
+   blockWithElements : {
+      width: '100%',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingLeft: 15,
+      paddingRight: 15,
+      paddingBottom: 15
+   },
+
+   name : {
       color: '#FFFFFF',
       fontSize: 36,
       fontFamily: 'baloo-extraBold'
@@ -43,4 +50,7 @@ const styles = StyleSheet.create({
       resizeMode: 'contain',
       objectFit: 'cover'
    }
+
 });
+
+
