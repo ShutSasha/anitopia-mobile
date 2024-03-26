@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Header() {
    return (
-      <SafeAreaView style={styles.mainBlock}>
+      <SafeAreaView style={styles.container}>
          <View style={styles.blockWithElements}>
             <TouchableHighlight>
                <Image source={require('../assets/notification-icon.png')} />
@@ -19,7 +19,7 @@ export default function Header() {
 }
 
 const styles = StyleSheet.create({
-   mainBlock : {
+   container : {
       width: '100%',
       height: 110,
       backgroundColor: '#343A40',
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
    name : {
       color: '#FFFFFF',
       fontSize: 36,
-      fontFamily: 'baloo-extraBold'
+      fontFamily: 'BalooTamma2_800ExtraBold'
    },
 
    avatar: {

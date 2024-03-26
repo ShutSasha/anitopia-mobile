@@ -1,6 +1,5 @@
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-// import SvgUri from 'react-native-svg-uri';
 import MainPageIcon from '../assets/main-page-icon.svg';
 import Catalog from '../assets/catalog-icon.svg';
 import Search from '../assets/search-icon.svg';
@@ -8,7 +7,7 @@ import Collections from '../assets/collection-icon.svg';
 import Menu from '../assets/menu-icon.svg';
 export default function NavigationMenu() {
    return (
-      <SafeAreaView style={styles.mainBlock}>
+      <SafeAreaView style={styles.container}>
          <View style={styles.blockWithElements}>
             <TouchableOpacity style={styles.option} onPress={() => console.log('Головна нажата')}>
                <MainPageIcon width={30} height={30}/>
@@ -36,7 +35,7 @@ export default function NavigationMenu() {
 }
 
 const styles = StyleSheet.create({
-   mainBlock: {
+   container: {
       position: 'absolute',
       bottom: 0,
       width: '100%',
@@ -63,8 +62,9 @@ const styles = StyleSheet.create({
    },
 
    optionText: {
-      fontFamily: 'franklin-gothic-medium',
+      fontFamily: 'Raleway_500Medium',
       fontSize: 12,
-      color: '#FFFFFF'
+      color: '#FFFFFF',
+      paddingTop: 5
    }
 });
