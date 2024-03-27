@@ -1,10 +1,12 @@
-import { SafeAreaView, StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native'
+import { SafeAreaView, StyleSheet, Image, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
 
 
-export default function UpdatedAnime({animeItem}) {
+export default function BlockListAnimeItem(props) {
+   const { animeItem, index } = props;
+
    return (
-      <View style={styles.animeBlock}>
+      <View style={[styles.animeBlock, index === 0 && styles.firstItem]}>
          <View style={styles.animeCoverAndName}>
             <TouchableOpacity>
                <Image style={styles.animeCover} source={animeItem.cover} />
@@ -35,13 +37,18 @@ const styles = StyleSheet.create({
       height: 50,
       width: '100%',
       backgroundColor: '#FFFFFF',
-      borderColor: '#000000',
-      borderWidth: 1,
+      borderBottomColor: '#000000',
+      borderBottomWidth: 1,
       borderStyle: 'solid',
       paddingRight: 10,
       paddingLeft: 10,
       flexDirection: 'row',
       justifyContent: 'space-between'
+   },
+
+   firstItem: {
+      borderTopColor: '#000000',
+      borderTopWidth: 1,
    },
 
    animeCoverAndName: {
@@ -73,7 +80,7 @@ const styles = StyleSheet.create({
    },
 
    additionalText: {
-      fontFamily: 'Raleway_500Medium',
+      fontFamily: 'Raleway_600SemiBold',
       fontSize: 14
    },
 

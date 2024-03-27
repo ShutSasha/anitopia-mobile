@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import MainPageIcon from '../assets/main-page-icon.svg';
 import Catalog from '../assets/catalog-icon.svg';
@@ -36,11 +36,10 @@ export default function NavigationMenu() {
 
 const styles = StyleSheet.create({
    container: {
-      position: 'absolute',
-      bottom: 0,
       width: '100%',
-      height: 88,
+      height: Platform.OS === 'ios' ? 88 : 75,
       backgroundColor: '#343A40',
+      marginTop: 'auto',
    },
 
    blockWithElements: {

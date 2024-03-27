@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Image, Text, TouchableHighlight, View } from 'react-native'
+import { SafeAreaView, StyleSheet, Image, Text, TouchableHighlight, View, Platform } from 'react-native'
 import React from 'react'
 
 
@@ -21,7 +21,7 @@ export default function Header() {
 const styles = StyleSheet.create({
    container : {
       width: '100%',
-      height: 110,
+      height: Platform.OS === 'ios' ? 110 : 70,
       backgroundColor: '#343A40',
       borderBottomWidth: 5,
       borderColor: '#FF6666'
