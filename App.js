@@ -1,10 +1,12 @@
 
-import { View, StyleSheet} from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { BASE_URL } from './app/http'
 import { useFonts, BalooTamma2_800ExtraBold } from '@expo-google-fonts/baloo-tamma-2';
 import { Raleway_800ExtraBold, Raleway_500Medium, Raleway_600SemiBold} from '@expo-google-fonts/raleway';
 import Main from './pages/Main'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Menu from './assets/menu-icon.svg'
 
 const animeList = {
    anime1 : {
@@ -96,27 +98,43 @@ export default function App() {
       Raleway_600SemiBold
    });
    const [animeSeason, setAnimeSeason] = useState()
+   let [count, setCount] = useState(0)
+
    useEffect(() =>{
-      axios.get('https://murmuring-scrubland-20299-7ca64aec790b.herokuapp.com/api/anime/season-anime')
-         .then( res => {
-            // setAnimeSeason(res.data)
-            console.log(111)
-         })
-         .catch(error => console.log(123))
-   }, [])
+      const fetchAnimeSeason = async () => {
+         try {
+            console.log(count);
+            const res = await axios.get(`${BASE_URL}/api/anime/season-anime`);
+            setAnimeSeason(res.data);
+            console.log('success');
+         }
+         catch (error) {
+            console.log(error);
+         }
+      };
+
+      fetchAnimeSeason();
+
+   }, [count]);
 
    if (!fontsLoaded && !fontError) {
       return null;
+   }
+   function increment (){
+      setCount(count++)
    }
 
    return (
       <View style={styles.theWholePage}>
          <Main animeList = {animeList}/>
-         {/*{animeSeason && animeSeason.map(item => (*/}
-         {/*   <View>*/}
-         {/*      {item.id}*/}
-         {/*   </View>*/}
-         {/*))}*/}
+         <TouchableOpacity onPress={() => increment()}>
+            <Text>ABOBA</Text>
+         </TouchableOpacity>
+         {animeSeason && animeSeason.map(item => (
+            <Text key={item.id}>
+               {item.id}
+            </Text>
+         ))}
       </View>
    )
 }
@@ -126,5 +144,3 @@ const styles = StyleSheet.create({
       flex: 1
    }
 });
-
-
