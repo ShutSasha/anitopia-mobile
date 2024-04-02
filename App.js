@@ -6,7 +6,6 @@ import { Raleway_800ExtraBold, Raleway_500Medium, Raleway_600SemiBold} from '@ex
 import Main from './pages/Main'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Menu from './assets/menu-icon.svg'
 
 const animeList = {
    anime1 : {
@@ -98,7 +97,6 @@ export default function App() {
       Raleway_600SemiBold
    });
    const [animeSeason, setAnimeSeason] = useState()
-   let [count, setCount] = useState(0)
 
    useEffect(() =>{
       const fetchAnimeSeason = async () => {
@@ -115,21 +113,15 @@ export default function App() {
 
       fetchAnimeSeason();
 
-   }, [count]);
+   });
 
    if (!fontsLoaded && !fontError) {
       return null;
-   }
-   function increment (){
-      setCount(count++)
    }
 
    return (
       <View style={styles.theWholePage}>
          <Main animeList = {animeList}/>
-         <TouchableOpacity onPress={() => increment()}>
-            <Text>ABOBA</Text>
-         </TouchableOpacity>
          {animeSeason && animeSeason.map(item => (
             <Text key={item.id}>
                {item.id}

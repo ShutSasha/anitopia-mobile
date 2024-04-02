@@ -37,7 +37,7 @@ export default function NavigationMenu() {
 const styles = StyleSheet.create({
    container: {
       width: '100%',
-      height: Platform.OS === 'ios' ? 88 : 75,
+      height: Platform.OS === 'ios' ? 88 : 80,
       backgroundColor: '#343A40',
       marginTop: 'auto',
    },
@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
       alignItems: 'center',
       paddingLeft: 15,
-      paddingRight: 15
+      paddingRight: 15,
+      paddingBottom: 15
    },
 
    option: {

@@ -27,11 +27,19 @@ const styles = StyleSheet.create({
       alignSelf: 'auto'
    },
 
+   /*titleBackground: {
+      width: '100%',
+      height: 45,
+      backgroundColor: 'rgba(0,0,0,0.1)',
+      justifyContent: 'center',
+      alignItems: 'center',
+   },*/
+
    title: {
       fontFamily: 'Raleway_800ExtraBold',
       fontSize: 24,
       marginBottom: 20,
-      marginTop: 30
+      marginTop: 20
    }
 });
 
