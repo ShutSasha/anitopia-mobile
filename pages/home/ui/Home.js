@@ -2,13 +2,13 @@ import React from 'react'
 import { View, FlatList } from 'react-native'
 import { styles } from './styles'
 import { Header } from '../../../widgets/header'
-import { Carousel } from '../../../widgets/carousel'
+import { CarouselAnitopia } from '../../../widgets/Carousel'
 import { UpdatedAnime } from '../../../widgets/updated-anime'
 import { Footer } from '../../../widgets/footer'
 
-export const Home = ({ sliderList, animeList }) => {
+export const Home = ({ animeList }) => {
    const widgets = [
-      <Carousel sliderList={sliderList} nameOfTheBlock={'Аніме весняного сезону'} />,
+      <CarouselAnitopia />,
       <UpdatedAnime animeList={animeList} nameOfTheBlock={'Оновлене аніме'} />,
       <UpdatedAnime animeList={animeList} nameOfTheBlock={'Нещодавно вийшли аніме'} />,
    ]

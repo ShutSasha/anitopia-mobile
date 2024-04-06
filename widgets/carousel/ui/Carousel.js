@@ -1,18 +1,31 @@
-import React from 'react'
-import { Text, View } from 'react-native'
-import { styles } from './styles'
-import { CarouselCard } from '../../../entities/carousel-card'
+import * as React from 'react'
+import { Dimensions, Text, View } from 'react-native'
+import Carousel from 'react-native-reanimated-carousel'
 
-export const Carousel = ({ sliderList, nameOfTheBlock }) => {
+export const CarouselAnitopia = () => {
+   const width = Dimensions.get('window').width
    return (
-      <View style={styles.container}>
-         <View style={styles.titleBackground}>
-            <Text style={styles.title}>{nameOfTheBlock}</Text>
-         </View>
-         <View style={styles.sliderRow}>
-            {sliderList &&
-               sliderList.map((slide, index) => <CarouselCard key={slide.id} index={index} slideItem={slide} />)}
-         </View>
+      <View style={{ flex: 1 }}>
+         <Carousel
+            loop
+            width={width}
+            height={width / 2}
+            autoPlay={true}
+            data={[...new Array(6).keys()]}
+            scrollAnimationDuration={500}
+            onSnapToItem={(index) => console.log('current index:', index)}
+            renderItem={({ index }) => (
+               <View
+                  style={{
+                     flex: 1,
+                     borderWidth: 1,
+                     justifyContent: 'center',
+                  }}
+               >
+                  <Text style={{ textAlign: 'center', fontSize: 30 }}>{index}</Text>
+               </View>
+            )}
+         />
       </View>
    )
 }
