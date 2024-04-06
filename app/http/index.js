@@ -1,1 +1,1 @@
-export const BASE_URL = "http://10.0.2.2:5000";
+export const BASE_URL = 'https://anitopia-272e22b911e8.herokuapp.com'
