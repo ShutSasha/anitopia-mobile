@@ -3,7 +3,7 @@ import { Platform, StatusBar, StyleSheet } from 'react-native'
 export const styles = StyleSheet.create({
    container: {
       width: '100%',
-      height: Platform.OS === 'ios' ? 110 : StatusBar.currentHeight + 60,
+      height: Platform.OS === 'ios' ? 110 : StatusBar.currentHeight + 65,
       paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
       backgroundColor: '#343A40',
       borderBottomWidth: 5,
@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       paddingLeft: 15,
       paddingRight: 15,
+      paddingTop: 5,
       paddingBottom: 15,
    },
 

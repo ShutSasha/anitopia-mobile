@@ -14,8 +14,8 @@ export const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      paddingLeft: 15,
-      paddingRight: 15,
+      paddingLeft: 10,
+      paddingRight: 10,
       paddingBottom: 15,
    },
 

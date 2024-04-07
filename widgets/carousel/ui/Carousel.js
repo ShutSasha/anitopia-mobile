@@ -1,28 +1,45 @@
 import * as React from 'react'
-import { Dimensions, Text, View } from 'react-native'
+import { Text, View, Image, Dimensions } from 'react-native'
 import Carousel from 'react-native-reanimated-carousel'
+import 'react-native-gesture-handler'
+import { sliderList } from '../../../consts/slider-list'
 
 export const CarouselAnitopia = () => {
-   const width = Dimensions.get('window').width
+   const COUNT = 2
+   const PAGE_WIDTH = Dimensions.get('window').width
+   const SLIDE_WIDTH = PAGE_WIDTH / COUNT
+
+   const baseOptions = {
+      vertical: false,
+      width: SLIDE_WIDTH,
+      height: 300,
+      style: {
+         width: PAGE_WIDTH,
+      },
+   }
+
    return (
       <View style={{ flex: 1 }}>
          <Carousel
+            {...baseOptions}
             loop
-            width={width}
-            height={width / 2}
-            autoPlay={true}
-            data={[...new Array(6).keys()]}
-            scrollAnimationDuration={500}
-            onSnapToItem={(index) => console.log('current index:', index)}
-            renderItem={({ index }) => (
-               <View
-                  style={{
-                     flex: 1,
-                     borderWidth: 1,
-                     justifyContent: 'center',
-                  }}
-               >
-                  <Text style={{ textAlign: 'center', fontSize: 30 }}>{index}</Text>
+            data={sliderList}
+            scrollAnimationDuration={50}
+            renderItem={({ item }) => (
+               <View style={{ backgroundColor: 'black', height: 300 }}>
+                  <Image source={item.cover} style={{ width: '100%', height: 260 }} resizeMode='cover' />
+                  <View style={{ height: 40, justifyContent: 'center', alignItems: 'center' }}>
+                     <Text
+                        style={{
+                           color: 'white',
+                           textAlign: 'center',
+                           fontFamily: 'Raleway_600SemiBold',
+                           fontSize: 14,
+                        }}
+                     >
+                        {item.name}
+                     </Text>
+                  </View>
                </View>
             )}
          />
