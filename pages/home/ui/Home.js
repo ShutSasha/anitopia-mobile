@@ -11,7 +11,6 @@ export const Home = ({ animeList }) => {
       <UpdatedAnime nameOfTheBlock={'Аніме весняного сезону'} />,
       <CarouselAnitopia />,
       <UpdatedAnime animeList={animeList} nameOfTheBlock={'Оновлене аніме'} />,
-      <UpdatedAnime animeList={animeList} nameOfTheBlock={'Нещодавно вийшли аніме'} />,
    ]
 
    return (

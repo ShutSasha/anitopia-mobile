@@ -4,15 +4,13 @@ import { styles } from './styles'
 
 export const CarouselCard = ({ slideItem }) => {
    return (
-      <View style={[styles.sliderBlock]}>
-         <View style={styles.sliderCoverAndName}>
-            <TouchableOpacity>
-               <Image style={styles.sliderCover} source={slideItem.cover} />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => console.log(slideItem.id)}>
-               <Text style={styles.sliderName}>{slideItem.name}</Text>
-            </TouchableOpacity>
-         </View>
+      <View style={[styles.slideBlock]}>
+         <TouchableOpacity activeOpacity={1} onPress={() => console.log(slideItem.name)}>
+            <Image source={slideItem.cover} style={styles.slideCover} resizeMode='cover' />
+            <View style={styles.slideNameBlock}>
+               <Text style={styles.slideName}>{slideItem.name}</Text>
+            </View>
+         </TouchableOpacity>
       </View>
    )
 }

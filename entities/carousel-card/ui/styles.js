@@ -1,33 +1,27 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-   container: {
-      alignSelf: 'auto',
+   slideBlock: {
+      backgroundColor: 'black',
+      width: Dimensions.get('window').width / 2,
+      height: 300,
    },
 
-   sliderBlock: {
-      height: 200,
+   slideCover: {
       width: '100%',
-      backgroundColor: '#FFFFFF',
-      flexDirection: 'row',
+      height: 260,
    },
 
-   sliderCoverAndName: {
-      width: '30%',
-      height: 185,
-      flexDirection: 'column',
+   slideName: {
+      color: 'white',
+      textAlign: 'center',
+      fontFamily: 'Raleway_600SemiBold',
+      fontSize: 14,
+   },
+
+   slideNameBlock: {
+      height: 40,
+      justifyContent: 'center',
       alignItems: 'center',
-   },
-
-   sliderCover: {
-      width: 120,
-      height: 160,
-      borderRadius: 10,
-   },
-
-   sliderName: {
-      fontFamily: 'Raleway_800ExtraBold',
-      fontSize: 10,
-      paddingTop: 5,
    },
 })
