@@ -8,8 +8,8 @@ export const styles = StyleSheet.create({
    animeBlock: {
       height: 50,
       width: '100%',
-      backgroundColor: '#FFFFFF',
-      borderBottomColor: '#000000',
+      backgroundColor: 'white',
+      borderBottomColor: 'black',
       borderBottomWidth: 1,
       borderStyle: 'solid',
       paddingRight: 10,

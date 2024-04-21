@@ -2,25 +2,25 @@ import React from 'react'
 import { Image, Text, TouchableOpacity, View } from 'react-native'
 import { styles } from './styles'
 
-export const UpdatedAnimeCard = ({ animeItem, index }) => {
+export const UpdatedAnimeCard = ({ animeItem, index, count }) => {
    return (
-      <View style={[styles.animeBlock, index === 0 && styles.firstItem, index === 9 && styles.lastItem]}>
+      <TouchableOpacity
+         activeOpacity={0.6}
+         style={[styles.animeBlock, index === 0 && styles.firstItem, index === count - 1 && styles.lastItem]}
+         onPress={() => console.log(animeItem.name)}
+      >
          <View style={styles.animeCoverAndName}>
-            <TouchableOpacity>
-               <Image style={styles.animeCover} source={animeItem.cover} />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => console.log(animeItem.id)}>
-               <Text style={styles.animeName}>{animeItem.name}</Text>
-            </TouchableOpacity>
+            <Image style={styles.animeCover} source={animeItem.cover} />
+            <Text style={styles.animeName}>{animeItem.name}</Text>
          </View>
          <View style={styles.additionalInfo}>
-            <TouchableOpacity style={{ ...styles.text, paddingTop: 5 }}>
+            <View style={{ ...styles.text, paddingTop: 5 }}>
                <Text style={styles.additionalText}>{animeItem.episode}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.text}>
+            </View>
+            <View style={styles.text}>
                <Text style={styles.additionalText}>{animeItem.studio}</Text>
-            </TouchableOpacity>
+            </View>
          </View>
-      </View>
+      </TouchableOpacity>
    )
 }

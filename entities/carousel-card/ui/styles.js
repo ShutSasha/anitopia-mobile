@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
       color: 'white',
       textAlign: 'center',
       fontFamily: 'Raleway_600SemiBold',
-      fontSize: 14,
+      fontSize: 16,
    },
 
    slideNameBlock: {

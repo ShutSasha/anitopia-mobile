@@ -30,7 +30,12 @@ export const styles = StyleSheet.create({
    optionText: {
       fontFamily: 'Raleway_500Medium',
       fontSize: 12,
-      color: '#FFFFFF',
+      color: 'white',
       paddingTop: 5,
+   },
+
+   footerIcon: {
+      height: 30,
+      width: 30,
    },
 })

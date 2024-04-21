@@ -1,8 +1,8 @@
 import { Home } from './pages/home'
 import { useOwnFonts } from './hooks/useOwnFonts'
 import { useFetchAnimeSeason } from './hooks/useFetchAnimeSeason'
-import { animeList } from './consts/anime-list'
 import { sliderList } from './consts/slider-list'
+import { animeList } from './consts/anime-list'
 
 export default function App() {
    const [fontsLoaded, fontError] = useOwnFonts()

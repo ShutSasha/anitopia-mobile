@@ -7,11 +7,11 @@ export const Header = () => {
    return (
       <SafeAreaView style={styles.container}>
          <View style={styles.blockWithElements}>
-            <TouchableOpacity onPress={() => console.log('Повідомлення натиснуто')}>
+            <TouchableOpacity onPress={() => console.log('Повідомлення')}>
                <NotificationIcon width={48} height={48} />
             </TouchableOpacity>
             <Text style={styles.name}>Anitopia</Text>
-            <TouchableOpacity onPress={() => console.log('Профіль натиснуто')}>
+            <TouchableOpacity onPress={() => console.log('Профіль')}>
                <Image style={styles.avatar} source={require('../../../assets/avatar.jpg')} />
             </TouchableOpacity>
          </View>
