@@ -1,80 +1,80 @@
 export const animeList = [
    {
       id: 1,
-      name: 'Назва 1го аніме',
-      cover: require('../assets/avatar.jpg'),
+      name: 'Зошит смерті',
+      cover: require('../assets/death-note-cover.webp'),
       episode: 21,
       studio: 'Назва студії',
    },
 
    {
       id: 2,
-      name: 'Назва 2го аніме',
-      cover: require('../assets/avatar.jpg'),
+      name: 'Доктор Стоун',
+      cover: require('../assets/dr-stone-cover.webp'),
       episode: 33,
       studio: 'Назва студії',
    },
 
    {
       id: 3,
-      name: 'Назва 3го аніме',
-      cover: require('../assets/avatar.jpg'),
+      name: 'Моя геройська академія',
+      cover: require('../assets/my-hero-academ-cover.webp'),
       episode: 21,
       studio: 'Назва студії',
    },
 
    {
       id: 4,
-      name: 'Назва 4го аніме',
-      cover: require('../assets/avatar.jpg'),
+      name: 'Наруто',
+      cover: require('../assets/naruto-cover.webp'),
       episode: 33,
       studio: 'Назва студії',
    },
 
    {
       id: 5,
-      name: 'Назва 5го аніме',
-      cover: require('../assets/avatar.jpg'),
+      name: 'Підняття рівня поодинці',
+      cover: require('../assets/solo-level-cover.webp'),
       episode: 21,
       studio: 'Назва студії',
    },
 
    {
       id: 6,
-      name: 'Назва 6го аніме',
-      cover: require('../assets/avatar.jpg'),
+      name: 'Зошит смерті',
+      cover: require('../assets/death-note-cover.webp'),
       episode: 33,
       studio: 'Назва студії',
    },
 
    {
       id: 7,
-      name: 'Назва 7го аніме',
-      cover: require('../assets/avatar.jpg'),
+      name: 'Доктор Стоун',
+      cover: require('../assets/dr-stone-cover.webp'),
       episode: 21,
       studio: 'Назва студії',
    },
 
    {
       id: 8,
-      name: 'Назва 8го аніме',
-      cover: require('../assets/avatar.jpg'),
+      name: 'Моя геройська академія',
+      cover: require('../assets/my-hero-academ-cover.webp'),
       episode: 33,
       studio: 'Назва студії',
    },
 
    {
       id: 9,
-      name: 'Назва 9го аніме',
-      cover: require('../assets/avatar.jpg'),
+      name: 'Наруто',
+      cover: require('../assets/naruto-cover.webp'),
       episode: 21,
       studio: 'Назва студії',
    },
 
    {
       id: 10,
-      name: 'Назва 10го аніме',
-      cover: require('../assets/avatar.jpg'),
+      name: 'Підняття рівня поодинці',
+      cover: require('../assets/solo-level-cover.webp'),
       episode: 33,
       studio: 'Назва студії',
    },

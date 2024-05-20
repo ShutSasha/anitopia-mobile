@@ -6,11 +6,13 @@ import CatalogIcon from '../../../assets/catalog-icon.svg'
 import SearchIcon from '../../../assets/search-icon.svg'
 import CollectionsIcon from '../../../assets/collection-icon.svg'
 import MenuIcon from '../../../assets/menu-icon.svg'
-
+import { useNavigation } from '@react-navigation/native';
 export const Footer = () => {
+   const navigation = useNavigation();
+
    const footerOptions = [
-      { label: 'Головна', onPress: () => console.log('Головна'), Icon: MainPageIcon },
-      { label: 'Каталог', onPress: () => console.log('Каталог'), Icon: CatalogIcon },
+      { label: 'Головна', onPress: () => navigation.navigate('Home'), Icon: MainPageIcon },
+      { label: 'Каталог', onPress: () => navigation.navigate('Catalog'), Icon: CatalogIcon },
       { label: 'Пошук', onPress: () => console.log('Пошук'), Icon: SearchIcon },
       { label: 'Колекції', onPress: () => console.log('Колекції'), Icon: CollectionsIcon },
       { label: 'Меню', onPress: () => console.log('Меню'), Icon: MenuIcon },

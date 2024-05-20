@@ -16,11 +16,11 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       paddingLeft: 10,
       paddingRight: 10,
-      paddingBottom: 15,
+      paddingBottom: Platform.OS === 'ios' ? 3 : 15,
    },
 
    option: {
-      paddingTop: 26,
+      paddingTop: Platform.OS === 'ios' ? 35 : 26,
       width: '20%',
       flexDirection: 'column',
       justifyContent: 'center',

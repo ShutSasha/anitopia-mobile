@@ -16,6 +16,7 @@
     "@expo-google-fonts/roboto-flex": "^0.2.3",
     "@expo/metro-runtime": "~3.2.1",
     "@expo/vector-icons": "^14.0.2",
+    "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/stack": "^6.3.29",
     "@splidejs/react-splide": "^0.7.12",

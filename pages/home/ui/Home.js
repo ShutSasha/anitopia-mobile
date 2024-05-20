@@ -7,10 +7,12 @@ import { CarouselAnitopia } from '../../../widgets/carousel'
 import { UpdatedAnime } from '../../../widgets/updated-anime'
 import { Footer } from '../../../widgets/footer'
 
-export const Home = ({ animeList }) => {
+export const Home = ({ route }) => {
+   const { sliderList, animeList } = route.params;
+
    const seasonAnimeTitle = <MainTitle nameOfTheBlock={'Аніме весняного сезону'} />
-   const carouselAnitopia = <CarouselAnitopia />
-   const updatedAnimeTitle = <MainTitle nameOfTheBlock={'Оновлене аніме'} />
+   const carouselAnitopia = <CarouselAnitopia sliderList={sliderList}/>
+   const updatedAnimeTitle = <MainTitle nameOfTheBlock={'Оновлене аніме'} topBorder={true}/>
    const updatedAnimeList = <UpdatedAnime animeList={animeList} />
 
    const widgets = [seasonAnimeTitle, carouselAnitopia, updatedAnimeTitle, updatedAnimeList]
@@ -22,10 +24,9 @@ export const Home = ({ animeList }) => {
             data={widgets}
             renderItem={({ item }) => <View style={styles.container}>{item}</View>}
             keyExtractor={(item, index) => index.toString()}
-            bounces={false}
+            bounces={true}
             overScrollMode='never'
          />
-         <Footer />
       </View>
    )
 }

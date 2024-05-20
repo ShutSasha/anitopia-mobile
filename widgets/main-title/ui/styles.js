@@ -17,11 +17,15 @@ export const styles = StyleSheet.create({
       borderColor: '#FF6666',
    },
 
+   topBorder: {
+      borderTopWidth: 3,
+   },
+
    title: {
       fontFamily: 'Raleway_800ExtraBold',
       fontSize: 24,
       color: 'white',
-      marginBottom: 20,
-      marginTop: 20,
+      marginBottom: 15,
+      marginTop: 15,
    },
 })

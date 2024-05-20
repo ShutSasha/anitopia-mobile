@@ -1,10 +1,9 @@
 import * as React from 'react'
 import { View, FlatList } from 'react-native'
 import { styles } from './styles'
-import { sliderList } from '../../../consts/slider-list'
 import { CarouselCard } from '../../../entities/carousel-card'
 
-export const CarouselAnitopia = () => {
+export const CarouselAnitopia = ({sliderList}) => {
    return (
       <View style={styles.theWholePage}>
          <FlatList
@@ -14,7 +13,7 @@ export const CarouselAnitopia = () => {
             data={sliderList}
             renderItem={({ item }) => <CarouselCard slideItem={item} />}
             keyExtractor={(item) => item.id.toString()}
-            bounces={false}
+            bounces={true}
             overScrollMode='never'
          />
       </View>
