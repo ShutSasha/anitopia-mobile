@@ -13,6 +13,8 @@ export default function App() {
    const [fontsLoaded, fontError] = useOwnFonts()
    const animeSeason = useFetchAnimeSeason()
 
+   console.log(animeSeason);
+
    if (!fontsLoaded && !fontError) {
       return null;
    }
