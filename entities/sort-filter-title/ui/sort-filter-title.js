@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { styles } from './styles'
 
-export const SortFilterOptions = ({ image: ImageComponent, text }) => {
+export const SortFilterTitle = ({ image: ImageComponent, text }) => {
    return (
       <View style={styles.mainBlock}>
          <TouchableOpacity activeOpacity={0.6} style={styles.optionBlock}>

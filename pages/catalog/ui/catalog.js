@@ -4,7 +4,6 @@ import { styles } from './styles'
 import { Header } from '../../../widgets/header'
 import { AllAnimes } from '../../../widgets/all-animes'
 import {SortAndFilter} from '../../../widgets/sort-and-filter'
-import { Footer } from '../../../widgets/footer'
 
 export const Catalog = ({ route }) => {
    const { animeList } = route.params;

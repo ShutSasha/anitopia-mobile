@@ -3,12 +3,12 @@ import axios from 'axios'
 import { BASE_URL } from '../app/http'
 
 export const useFetchAnimeSeason = () => {
-   const [animeSeason, setAnimeSeason] = useState()
+   const [animeSeason, setAnimeSeason] = useState([])
 
    useEffect(() => {
       const fetchAnimeSeason = async () => {
          try {
-            const res = await axios.get(`${BASE_URL}/api/anime/season-anime`)
+            const res = await axios.get(`${BASE_URL}/api/anime/season`)
             setAnimeSeason(res.data)
             console.log('success')
          } catch (error) {
@@ -19,5 +19,7 @@ export const useFetchAnimeSeason = () => {
       fetchAnimeSeason()
    }, [])
 
-   return { animeSeason }
+   return animeSeason
 }
+
+

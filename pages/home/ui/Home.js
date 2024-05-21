@@ -5,13 +5,12 @@ import { Header } from '../../../widgets/header'
 import { MainTitle } from '../../../widgets/main-title'
 import { CarouselAnitopia } from '../../../widgets/carousel'
 import { UpdatedAnime } from '../../../widgets/updated-anime'
-import { Footer } from '../../../widgets/footer'
 
 export const Home = ({ route }) => {
-   const { sliderList, animeList } = route.params;
+   const { sliderList, animeList, animeSeason} = route.params;
 
    const seasonAnimeTitle = <MainTitle nameOfTheBlock={'Аніме весняного сезону'} />
-   const carouselAnitopia = <CarouselAnitopia sliderList={sliderList}/>
+   const carouselAnitopia = <CarouselAnitopia sliderList={animeSeason}/>
    const updatedAnimeTitle = <MainTitle nameOfTheBlock={'Оновлене аніме'} topBorder={true}/>
    const updatedAnimeList = <UpdatedAnime animeList={animeList} />
 

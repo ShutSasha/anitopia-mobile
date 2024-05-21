@@ -11,7 +11,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
    const [fontsLoaded, fontError] = useOwnFonts()
-   const { animeSeason } = useFetchAnimeSeason()
+   const animeSeason = useFetchAnimeSeason()
 
    if (!fontsLoaded && !fontError) {
       return null;
@@ -22,7 +22,7 @@ export default function App() {
          <Tab.Navigator tabBar={() => <Footer />}>
             <Tab.Screen
                name="Home"
-               initialParams={{ sliderList: sliderList, animeList: animeList }}
+               initialParams={{ sliderList: sliderList, animeList: animeList, animeSeason: animeSeason}}
                options={{ headerShown: false}}
             >
                {(props) => <Home {...props} />}
