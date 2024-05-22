@@ -5,16 +5,26 @@ import { Header } from '../../../widgets/header'
 import { MainTitle } from '../../../widgets/main-title'
 import { CarouselAnitopia } from '../../../widgets/carousel'
 import { UpdatedAnime } from '../../../widgets/updated-anime'
+import { Schedule } from '../../../widgets/schedule'
 
 export const Home = ({ route }) => {
-   const { sliderList, animeList, animeSeason} = route.params;
+   const { sliderList, animeList, scheduleList } = route.params
 
    const seasonAnimeTitle = <MainTitle nameOfTheBlock={'Аніме весняного сезону'} />
-   const carouselAnitopia = <CarouselAnitopia sliderList={animeSeason}/>
-   const updatedAnimeTitle = <MainTitle nameOfTheBlock={'Оновлене аніме'} topBorder={true}/>
+   const carouselSeason = <CarouselAnitopia sliderList={sliderList} />
+   const updatedAnimeTitle = <MainTitle nameOfTheBlock={'Оновлене аніме'} topBorder={true} />
    const updatedAnimeList = <UpdatedAnime animeList={animeList} />
+   const scheduleAnimeTitle = <MainTitle nameOfTheBlock={'Розклад аніме'} />
+   const carouselSchedule = <Schedule scheduleList={scheduleList} />
 
-   const widgets = [seasonAnimeTitle, carouselAnitopia, updatedAnimeTitle, updatedAnimeList]
+   const widgets = [
+      seasonAnimeTitle,
+      carouselSeason,
+      updatedAnimeTitle,
+      updatedAnimeList,
+      scheduleAnimeTitle,
+      carouselSchedule,
+   ]
 
    return (
       <View style={styles.theWholePage}>
