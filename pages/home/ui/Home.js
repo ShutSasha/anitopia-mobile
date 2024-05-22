@@ -8,13 +8,13 @@ import { UpdatedAnime } from '../../../widgets/updated-anime'
 import { Schedule } from '../../../widgets/schedule'
 
 export const Home = ({ route }) => {
-   const { sliderList, animeList, scheduleList } = route.params
+   const { sliderList, animeList, scheduleList} = route.params;
 
    const seasonAnimeTitle = <MainTitle nameOfTheBlock={'Аніме весняного сезону'} />
-   const carouselSeason = <CarouselAnitopia sliderList={sliderList} />
-   const updatedAnimeTitle = <MainTitle nameOfTheBlock={'Оновлене аніме'} topBorder={true} />
+   const carouselSeason = <CarouselAnitopia sliderList={sliderList}/>
+   const updatedAnimeTitle = <MainTitle nameOfTheBlock={'Оновлене аніме'} topBorder={true}/>
    const updatedAnimeList = <UpdatedAnime animeList={animeList} />
-   const scheduleAnimeTitle = <MainTitle nameOfTheBlock={'Розклад аніме'} />
+   const scheduleAnimeTitle = <MainTitle nameOfTheBlock={'Розклад аніме'} topBorder={true}/>
    const carouselSchedule = <Schedule scheduleList={scheduleList} />
 
    const widgets = [

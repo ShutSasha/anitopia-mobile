@@ -13,7 +13,7 @@ export const Footer = () => {
    const footerOptions = [
       { label: 'Головна', onPress: () => navigation.navigate('Home'), Icon: MainPageIcon },
       { label: 'Каталог', onPress: () => navigation.navigate('Catalog'), Icon: CatalogIcon },
-      { label: 'Пошук', onPress: () => console.log('Пошук'), Icon: SearchIcon },
+      { label: 'Пошук', onPress: () => navigation.navigate('Search'), Icon: SearchIcon },
       { label: 'Колекції', onPress: () => console.log('Колекції'), Icon: CollectionsIcon },
       { label: 'Меню', onPress: () => console.log('Меню'), Icon: MenuIcon },
    ]

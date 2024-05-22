@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { styles } from './styles'
+import { useFetchAnimeSeason } from '../../../hooks/useFetchAnimeSeason'
 
 export const CarouselCard = ({ slideItem }) => {
    return (
