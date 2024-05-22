@@ -3,36 +3,26 @@ import { View, FlatList } from 'react-native'
 import { styles } from './styles'
 import { Header } from '../../../widgets/header'
 import { AllAnimes } from '../../../widgets/all-animes'
-import {SortAndFilter} from '../../../widgets/sort-and-filter'
-import {SortOptions} from '../../../widgets/sort-options'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import { BASE_URL } from '../../../app/http'
-export const Catalog = ({ route }) => {
-   const { animeList } = route.params;
+import { SortAndFilter } from '../../../widgets/sort-and-filter'
+import { SortOptions } from '../../../widgets/sort-options'
+import { useState } from 'react'
+
+export const Catalog = () => {
    const [sortModal, setSortModal] = useState(false)
-   const allAnimes = <AllAnimes animeList={animeList} />
 
-   const widgets = [allAnimes]
-
-   useEffect(() => {
-      console.log(sortModal)
-
-   }, [sortModal])
-
-   const handleSortModal= (change) => {
-      setSortModal(change)
+   const handleSortModal = () => {
+      setSortModal(!sortModal)
    }
 
    return (
       <View style={styles.theWholePage}>
-         <SortOptions visible={sortModal} handleSortModal={handleSortModal}/>
+         <SortOptions visible={sortModal} handleSortModal={handleSortModal} />
          <Header />
          <SortAndFilter handleSortModal={handleSortModal} />
          <FlatList
-            data={widgets}
+            data={[<AllAnimes />]}
             renderItem={({ item }) => <View style={styles.container}>{item}</View>}
-            keyExtractor={(item, index) => index.toString()}
+            keyExtractor={(_, index) => index.toString()}
             bounces={true}
             overScrollMode='never'
          />

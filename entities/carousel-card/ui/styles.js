@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
    slideBlock: {
       backgroundColor: 'black',
       width: Dimensions.get('window').width / 2,
-      height: 300,
+      // height: 300,
    },
 
    slideCover: {
@@ -17,10 +17,15 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       fontFamily: 'Raleway_600SemiBold',
       fontSize: 16,
+      maxWidth: 100,
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
    },
 
    slideNameBlock: {
-      height: 40,
+      backgroundColor: 'red',
+      paddingHorizontal: 5,
+      paddingVertical: 10,
       justifyContent: 'center',
       alignItems: 'center',
    },

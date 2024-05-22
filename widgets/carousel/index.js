@@ -1,1 +1,1 @@
-export { CarouselAnitopia } from './ui/Carousel'
+export { CarouselAnitopia } from './ui/carousel'

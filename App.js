@@ -20,12 +20,7 @@ export default function App() {
       <NavigationContainer>
          <Tab.Navigator tabBar={() => <Footer />}>
             <Tab.Screen name='Home' options={{ headerShown: false }} component={Home}></Tab.Screen>
-            <Tab.Screen
-               name='Catalog'
-               initialParams={{ animeList: sliderList }}
-               options={{ headerShown: false }}
-               component={Catalog}
-            ></Tab.Screen>
+            <Tab.Screen name='Catalog' options={{ headerShown: false }} component={Catalog}></Tab.Screen>
             <Tab.Screen name='Search' component={Search} options={{ headerShown: false }}></Tab.Screen>
          </Tab.Navigator>
       </NavigationContainer>

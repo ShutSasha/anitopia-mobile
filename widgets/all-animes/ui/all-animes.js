@@ -2,8 +2,9 @@ import * as React from 'react'
 import { View, FlatList } from 'react-native'
 import { styles } from './styles'
 import { AnimeCard } from '../../../entities/anime-card'
+import { animeList } from '../../../consts/anime-list'
 
-export const AllAnimes = ({animeList}) => {
+export const AllAnimes = () => {
    return (
       <View style={styles.theWholePage}>
          <FlatList
