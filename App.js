@@ -19,7 +19,7 @@ export default function App() {
    if (!fontsLoaded && !fontError) {
       return null
    }
-   console.log(sliderList)
+
    return (
       <NavigationContainer>
          <Tab.Navigator tabBar={() => <Footer />}>

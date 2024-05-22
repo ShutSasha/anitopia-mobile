@@ -5,7 +5,9 @@ import { Header } from '../../../widgets/header'
 import { AllAnimes } from '../../../widgets/all-animes'
 import {SortAndFilter} from '../../../widgets/sort-and-filter'
 import {SortOptions} from '../../../widgets/sort-options'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import { BASE_URL } from '../../../app/http'
 export const Catalog = ({ route }) => {
    const { animeList } = route.params;
    const [sortModal, setSortModal] = useState(false)
@@ -13,11 +15,20 @@ export const Catalog = ({ route }) => {
 
    const widgets = [allAnimes]
 
+   useEffect(() => {
+      console.log(sortModal)
+
+   }, [sortModal])
+
+   const handleSortModal= (change) => {
+      setSortModal(change)
+   }
+
    return (
       <View style={styles.theWholePage}>
-         <SortOptions visible={sortModal}/>
+         <SortOptions visible={sortModal} handleSortModal={handleSortModal}/>
          <Header />
-         <SortAndFilter setSortModal={setSortModal} sortModal={sortModal}/>
+         <SortAndFilter handleSortModal={handleSortModal} />
          <FlatList
             data={widgets}
             renderItem={({ item }) => <View style={styles.container}>{item}</View>}
