@@ -6297,10 +6297,10 @@ react-native-svg@^12.1.0:
     css-select "^5.1.0"
     css-tree "^1.1.3"
 
-react-native-svg@^15.3.0, react-native-svg@>=12.0.0:
-  version "15.3.0"
-  resolved "https://registry.npmjs.org/react-native-svg/-/react-native-svg-15.3.0.tgz"
-  integrity sha512-mBHu/fdlzUbpGX8SZFxgbKvK/sgqLfDLP8uh8G7Us+zJgdjO8OSEeqHQs+kPRdQmdLJQiqPJX2WXgCl7ToTWqw==
+react-native-svg@^15.2.0, react-native-svg@>=12.0.0:
+  version "15.2.0"
+  resolved "https://registry.npmjs.org/react-native-svg/-/react-native-svg-15.2.0.tgz"
+  integrity sha512-R0E6IhcJfVLsL0lRmnUSm72QO+mTqcAOM5Jb8FVGxJqX3NfJMlMP0YyvcajZiaRR8CqQUpEoqrY25eyZb006kw==
   dependencies:
     css-select "^5.1.0"
     css-tree "^1.1.3"

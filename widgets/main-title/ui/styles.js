@@ -3,16 +3,10 @@ import { StyleSheet } from 'react-native'
 export const styles = StyleSheet.create({
    container: {
       width: '100%',
-      alignItems: 'center',
-      alignSelf: 'auto',
    },
 
    titleBackground: {
       backgroundColor: '#343A40',
-      paddingHorizontal: 10,
-      width: '100%',
-      alignItems: 'center',
-      justifyContent: 'center',
       borderBottomWidth: 3,
       borderColor: '#FF6666',
    },
@@ -22,9 +16,10 @@ export const styles = StyleSheet.create({
    },
 
    title: {
+      textAlign: 'center',
       fontFamily: 'Raleway_800ExtraBold',
       fontSize: 24,
-      color: 'white',
+      color: '#fff',
       marginBottom: 15,
       marginTop: 15,
    },

@@ -2,8 +2,9 @@ import * as React from 'react'
 import { View, FlatList } from 'react-native'
 import { styles } from './styles'
 import { CarouselCard } from '../../../entities/carousel-card'
+import { sliderList } from '../../../consts/slider-list'
 
-export const CarouselAnitopia = ({sliderList}) => {
+export const CarouselAnitopia = () => {
    return (
       <View style={styles.theWholePage}>
          <FlatList
