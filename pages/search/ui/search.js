@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { View, FlatList } from 'react-native'
 import { styles } from './styles'
-import {SortOptions} from '../../../widgets/sort-options'
+import {MultipleSelect} from '../../../entities/multi-select'
 
 export const Search = () => {
 
 
    return (
       <View style={styles.theWholePage}>
-         <SortOptions/>
+         <MultipleSelect name={"     Оберіть жанр"}  searchText={"Шукати жанри..."}/>
       </View>
    )
 }
