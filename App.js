@@ -6,6 +6,7 @@ import { Search } from './pages/search'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Footer } from './widgets/footer'
+import { Filter } from './pages/filter'
 
 const Tab = createBottomTabNavigator()
 
