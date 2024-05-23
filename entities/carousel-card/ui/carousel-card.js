@@ -4,11 +4,13 @@ import { styles } from './styles'
 
 export const CarouselCard = ({ slideItem }) => {
    return (
-      <View style={styles.slideBlock}>
-         <TouchableOpacity activeOpacity={0.8} onPress={() => console.log(slideItem.poster_url)}>
-            <Image source={{ uri: slideItem.poster_url }} style={styles.slideCover} resizeMode='cover' />
-            <View style={styles.slideNameBlock}>
-               <Text style={styles.slideName}>{slideItem.title}</Text>
+      <View style={styles.card_container}>
+         <TouchableOpacity activeOpacity={0.8} onPress={() => console.log('here should be route to anime page')}>
+            <Image source={{ uri: slideItem.poster_url }} style={styles.poster} resizeMode='cover' />
+            <View style={styles.text_container}>
+               <Text style={styles.card_text} numberOfLines={1} ellipsizeMode='tail'>
+                  {slideItem.title}
+               </Text>
             </View>
          </TouchableOpacity>
       </View>
