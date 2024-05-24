@@ -4,6 +4,7 @@ import { Header } from '../../../widgets/header'
 import { UpdatedAnime } from '../../../widgets/updated-anime'
 import { News } from '../../../widgets/news'
 import { AnimeSeason } from '../../../widgets/anime-season'
+import { Footer } from '../../../widgets/footer'
 
 export const Home = () => {
    return (

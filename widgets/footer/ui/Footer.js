@@ -15,7 +15,7 @@ export const Footer = () => {
       { label: 'Каталог', onPress: () => navigation.navigate('Catalog'), Icon: CatalogIcon },
       { label: 'Пошук', onPress: () => navigation.navigate('Search'), Icon: SearchIcon },
       { label: 'Колекції', onPress: () => console.log('Колекції'), Icon: CollectionsIcon },
-      { label: 'Меню', onPress: () => console.log('Меню'), Icon: MenuIcon },
+      { label: 'Меню', onPress: () => navigation.openDrawer(), Icon: MenuIcon },
    ]
 
    return (
