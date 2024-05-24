@@ -7,9 +7,14 @@ export const styles = StyleSheet.create({
    },
 
    container: {
+      flex: 1,
       width: '100%',
-      alignItems: 'center',
       alignSelf: 'auto',
+   },
+
+   contentContainer: {
+      alignItems: 'center',
+      padding: 16,
    },
 
    title:{

@@ -29,6 +29,7 @@ export const FilterOptions = ({ visible, handleFilterModal }) => {
                      }
                      return null;
                   }}
+                  keyboardOpeningTime={0.25}
                   keyExtractor={(item) => item.id.toString()}
                   extraScrollHeight={20}
                   enableAutomaticScroll={true}
