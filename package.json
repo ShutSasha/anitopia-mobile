@@ -16,6 +16,7 @@
     "@expo-google-fonts/roboto-flex": "^0.2.3",
     "@expo/metro-runtime": "~3.2.1",
     "@expo/vector-icons": "^14.0.2",
+    "@react-native-community/checkbox": "^0.5.17",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/drawer": "^6.6.15",
     "@react-navigation/native": "^6.1.17",

@@ -46,7 +46,7 @@ export const CustomDrawer = (props) => {
             <View style={{ flex: 1, paddingTop: 10 }}>
                <DrawerItem
                   label="Топ-100 аниме"
-                  onPress={() => {}}
+                  onPress={() => props.navigation.navigate('Registration')}
                   icon={() => (
                      <Top100Icon
                         width={22}
@@ -58,7 +58,7 @@ export const CustomDrawer = (props) => {
                />
                <DrawerItem
                   label="Рандомное аниме"
-                  onPress={() => {}}
+                  onPress={() => props.navigation.navigate('Authorization')}
                   icon={() => (
                      <RandomIcon
                         width={22}

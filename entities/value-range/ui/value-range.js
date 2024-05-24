@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, View } from 'react-native'
 import { styles } from './styles'
 import { TextInput } from 'react-native-paper'
 
 export const ValueRange = ({item}) => {
-   const [from, setFrom] = React.useState("");
-   const [to, setTo] = React.useState("");
+   const [from, setFrom] = useState("");
+   const [to, setTo] = useState("");
 
    const handleFromChange = (text) => {
       if (/^(19|20)?\d{0,2}$/.test(text)) {
@@ -20,7 +20,7 @@ export const ValueRange = ({item}) => {
    };
 
    return (
-      <View style={styles.theMainBlock}>
+      <View>
          <Text style={styles.text}>{item.header}</Text>
          <View style={styles.inputWrapper}>
             <TextInput

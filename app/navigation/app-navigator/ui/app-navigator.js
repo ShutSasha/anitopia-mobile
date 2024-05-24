@@ -5,6 +5,8 @@ import {Catalog} from '../../../../pages/catalog'
 import {Home} from '../../../../pages/home'
 import React from 'react'
 import { CustomDrawer } from '../../custom-navigator/ui/custom-navigator'
+import { Authorization } from '../../../../pages/authorization'
+import { Registration } from '../../../../pages/registration'
 
 
 const Drawer = createDrawerNavigator()
@@ -29,22 +31,22 @@ export const AppNavigator = () => {
                   drawerPosition: 'right',
                }}
             />
-            {/*<Drawer.Screen
-               name="Catalog"
-               component={TabsNavigator}
+            <Drawer.Screen
+               name="Authorization"
+               component={Authorization}
                options={{
                   drawerPosition: 'right',
                   title: 'Топ-100',
                }}
             />
             <Drawer.Screen
-               name="Home"
-               component={Home}
+               name="Registration"
+               component={Registration}
                options={{
                   drawerPosition: 'right',
                   title: 'Випадкове аніме',
                }}
-            />*/}
+            />
          </Drawer.Navigator>
       </NavigationContainer>
    )

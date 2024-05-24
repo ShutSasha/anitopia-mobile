@@ -4,7 +4,7 @@ import { Container } from '../../container'
 import { MainTitle } from '../../main-title'
 import { useFetchReleasedAnime } from '../../../hooks/useFetchReleasedAnime'
 
-export const News = () => {
+export const ReleasedAnime = () => {
    const releasedAnime = useFetchReleasedAnime()
 
    return (

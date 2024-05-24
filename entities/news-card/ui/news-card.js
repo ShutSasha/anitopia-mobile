@@ -10,7 +10,7 @@ export const NewsCard = ({ newsItem, index, count }) => {
          onPress={() => console.log(newsItem.name)}
       >
          <View style={styles.animeCoverAndName}>
-            <Image style={styles.animeCover} source={newsItem.poster_url} />
+            <Image style={styles.animeCover} source={{ uri: newsItem.poster_url }} />
             <Text style={styles.animeName}>{newsItem.title}</Text>
          </View>
          <View style={styles.additionalInfo}>
