@@ -27,13 +27,5 @@ export const styles = StyleSheet.create({
       marginBottom: 60
    },
 
-   registationText:{
-      fontSize: 15,
-      textDecorationLine: 'underline',
-      color: '#FFFFFF',
-      fontFamily: 'BalooTamma2_800ExtraBold',
-      marginBottom: 30,
-      marginTop: 5
-   },
 
 })
