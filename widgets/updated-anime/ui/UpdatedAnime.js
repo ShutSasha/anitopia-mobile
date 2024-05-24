@@ -3,14 +3,18 @@ import { UpdatedAnimeCard } from '../../../entities/updated-anime-card'
 import { animeList } from '../../../consts/anime-list'
 import { Container } from '../../container'
 import { MainTitle } from '../../main-title'
+import { useFetchUpdatedAnime } from '../../../hooks/useFetchUpdatedAnime'
 
 export const UpdatedAnime = () => {
+
+   const updatedAnime = useFetchUpdatedAnime()
+
    return (
       <Container styles={{ width: '100%' }}>
          <MainTitle nameOfTheBlock={'Оновлене аніме'} topBorder={true} />
-         {animeList &&
-            animeList.map((anime, index) => (
-               <UpdatedAnimeCard key={anime.id} animeItem={anime} index={index} count={10} />
+         {updatedAnime &&
+            updatedAnime.map((anime) => (
+               <UpdatedAnimeCard key={anime.id} animeItem={anime} index={updatedAnime.indexOf(anime)} count={updatedAnime.length}/>
             ))}
       </Container>
    )

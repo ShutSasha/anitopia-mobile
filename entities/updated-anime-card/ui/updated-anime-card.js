@@ -2,9 +2,10 @@ import React from 'react'
 import { Image, Text, TouchableOpacity, View } from 'react-native'
 import { styles } from './styles'
 
-export const UpdatedAnimeCard = ({ animeItem, index, count }) => {
+export const UpdatedAnimeCard = ({ key, animeItem, index, count }) => {
    return (
       <TouchableOpacity
+         key={key}
          activeOpacity={0.6}
          style={[styles.animeBlock, index === 0 && styles.firstItem, index === count - 1 && styles.lastItem]}
          onPress={() => console.log(animeItem.name)}
@@ -14,12 +15,7 @@ export const UpdatedAnimeCard = ({ animeItem, index, count }) => {
             <Text style={styles.animeName}>{animeItem.title}</Text>
          </View>
          <View style={styles.additionalInfo}>
-            <View style={{ ...styles.text, paddingTop: 5 }}>
-               <Text style={styles.additionalText}>{animeItem.episode}</Text>
-            </View>
-            <View style={styles.text}>
-               <Text style={styles.additionalText}>{animeItem.studio}</Text>
-            </View>
+            <Text style={styles.additionalText}>{animeItem.last_episode}</Text>
          </View>
       </TouchableOpacity>
    )
