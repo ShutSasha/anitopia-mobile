@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, SafeAreaView, Platform } from 'react-native';
 import { styles } from './styles';
-import { AuthorizationInput } from '../../../shared/authorization-input';
+import { UserTextInput } from '../../../shared/text-input'
 import { ButtonWithText } from '../../../shared/button-with-text';
 import { ButtonWithImage } from '../../../shared/button-with-image';
-import { CheckBoxInput } from '../../../shared/checkbox-input/ui/checkbox-input';
+import { CheckboxInput } from '../../../shared/checkbox-input/ui/checkbox-input';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 export const Registration = () => {
@@ -40,29 +40,29 @@ export const Registration = () => {
             extraHeight={Platform.OS === 'ios' ? 80 : 0}
          >
             <Text style={styles.title}>Anitopia</Text>
-            <Text style={styles.nameOfPage}>Регістрація</Text>
-            <AuthorizationInput
+            <Text style={styles.nameOfPage}>Реєстрація</Text>
+            <UserTextInput
                typeOfInput={"userName"}
                userInput={userName}
                handleInput={handleUserName}
             />
-            <AuthorizationInput
+            <UserTextInput
                typeOfInput={"email"}
                userInput={email}
                handleInput={handleEmail}
             />
-            <AuthorizationInput
+            <UserTextInput
                typeOfInput={"password"}
                userInput={password}
                handleInput={handlePassword}
             />
-            <AuthorizationInput
+            <UserTextInput
                typeOfInput={"verifyPassword"}
                userInput={verifyPassword}
                handleInput={handleVerifyPassword}
             />
-            <CheckBoxInput checkBoxInput={checkBoxInput} handleCheckBox={handleCheckBox} />
-            <ButtonWithText text={"Зарегіструватися"} />
+            <CheckboxInput checkBoxInput={checkBoxInput} handleCheckBox={handleCheckBox} />
+            <ButtonWithText text={"Зареєструватися"} />
             <ButtonWithImage />
          </KeyboardAwareScrollView>
       </SafeAreaView>

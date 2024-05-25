@@ -6,7 +6,7 @@ export const valueRangeData = [
    },
    {
       id: '211',
-      type: 'valueRange',
+      type: 'valueRangeWithoutCharsCheck',
       header: "Кількість серій"
    },
 ];

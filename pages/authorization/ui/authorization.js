@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, SafeAreaView, TouchableOpacity} from 'react-native'
 import { styles } from './styles'
-import { AuthorizationInput } from '../../../shared/authorization-input'
+import { UserTextInput } from '../../../shared/text-input'
 import { ButtonWithText } from '../../../shared/button-with-text'
 import { ButtonWithImage } from '../../../shared/button-with-image'
 
@@ -22,18 +22,18 @@ export const Authorization = () => {
          <View style={styles.container}>
                <Text style={styles.title}>Anitopia</Text>
                <Text style={styles.nameOfPage}>Авторизація</Text>
-               <AuthorizationInput
+               <UserTextInput
                   typeOfInput={"userName"}
                   userInput={userName}
                   handleInput={handleUserName}
                />
-               <AuthorizationInput
+               <UserTextInput
                   typeOfInput={"password"}
                   userInput={password}
                   handleInput={handlePassword}
                />
                <TouchableOpacity activeOpacity={0.6}>
-                  <Text style={styles.registationText}>Зарегіструватися</Text>
+                  <Text style={styles.registationText}>Зареєструватися</Text>
                </TouchableOpacity>
                <ButtonWithText text={"Увійти"}/>
                <ButtonWithImage />

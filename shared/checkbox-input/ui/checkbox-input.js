@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { View, FlatList, Text, TouchableOpacity } from 'react-native'
 import { styles } from './styles'
 import { FontAwesome5 } from '@expo/vector-icons';
-export const CheckBoxInput = ({checkBoxInput, handleCheckBox}) => {
+export const CheckboxInput = ({checkBoxInput, handleCheckBox}) => {
 
    return (
       <TouchableOpacity

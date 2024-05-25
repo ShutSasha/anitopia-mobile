@@ -1,8 +1,8 @@
 import React from 'react'
-import { NewsCard } from '../../../entities/news-card'
 import { Container } from '../../container'
 import { MainTitle } from '../../main-title'
 import { useFetchReleasedAnime } from '../../../hooks/useFetchReleasedAnime'
+import { ReleasedAnimeCard } from '../../../entities/released-anime-card'
 
 export const ReleasedAnime = () => {
    const releasedAnime = useFetchReleasedAnime()
@@ -12,9 +12,9 @@ export const ReleasedAnime = () => {
          <MainTitle nameOfTheBlock={'Нещодавно вийшли аніме'} topBorder={true} />
          {releasedAnime &&
             releasedAnime.map((anime) => (
-               <NewsCard
+               <ReleasedAnimeCard
                   key={anime._id}
-                  newsItem={anime}
+                  releasedItem={anime}
                   index={releasedAnime.indexOf(anime)}
                   count={releasedAnime.length}
                />

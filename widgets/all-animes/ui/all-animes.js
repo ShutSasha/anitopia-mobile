@@ -5,15 +5,16 @@ import { AnimeCard } from '../../../entities/anime-card'
 import { fetchAnimeList } from '../../../hooks/useFetchAnimeList'
 import { useState, useEffect } from 'react'
 
-export const AllAnimes = () => {
+export const AllAnimes = ({}) => {
    const [animes, setAnimes] = useState([])
    const [currentPage, setCurrentPage] = useState(1)
    const [query,setQuery] = useState("")
+
    const fetchMore = async () => {
       try {
          const { data } = await fetchAnimeList(currentPage, 20,query)
          setAnimes((prevData) => [...prevData, ...data])
-         setCurrentPage((prevPage) => prevPage + 1)
+         setCurrentPage(currentPage + 1)
       } catch (error) {
          console.error(error)
       }
@@ -21,6 +22,7 @@ export const AllAnimes = () => {
 
    useEffect(() => {
       fetchMore()
+
    }, [])
 
    return (

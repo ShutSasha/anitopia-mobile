@@ -16,6 +16,7 @@ import Top100Icon from '../../../../assets/top-100-icon.svg'
 import { styles } from './styles'
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
+import { RandomAnime } from '../../../../pages/random-anime'
 export const CustomDrawer = (props) => {
    return (
       <View style={{ flex: 1, backgroundColor: '#343A40' }}>
@@ -29,7 +30,7 @@ export const CustomDrawer = (props) => {
                style={{ flexDirection: 'row', alignItems: 'center'}}
             >
                <Image
-                  alt="Not found"
+                  alt="Не знайдено"
                   source={require('../../../../assets/avatar.jpg')}
                   style={styles.userAvatar}
                />
@@ -45,8 +46,8 @@ export const CustomDrawer = (props) => {
             </SafeAreaView>
             <View style={{ flex: 1, paddingTop: 10 }}>
                <DrawerItem
-                  label="Топ-100 аниме"
-                  onPress={() => props.navigation.navigate('Registration')}
+                  label="Топ-100 аніме"
+                  onPress={() => props.navigation.navigate('Top100Anime')}
                   icon={() => (
                      <Top100Icon
                         width={22}
@@ -57,8 +58,8 @@ export const CustomDrawer = (props) => {
                   labelStyle={{ color: '#fff', fontSize: 17 }}
                />
                <DrawerItem
-                  label="Рандомное аниме"
-                  onPress={() => props.navigation.navigate('Authorization')}
+                  label="Рандомне аніме"
+                  onPress={() => props.navigation.navigate('RandomAnime')}
                   icon={() => (
                      <RandomIcon
                         width={22}

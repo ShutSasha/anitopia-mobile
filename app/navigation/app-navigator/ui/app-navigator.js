@@ -1,15 +1,13 @@
-import { NavigationContainer } from '@react-navigation/native'
-import { createDrawerNavigator } from '@react-navigation/drawer'
-import { TabsNavigator } from '../../tab-navigator'
-import { Catalog } from '../../../../pages/catalog'
-import { Home } from '../../../../pages/home'
-import { AnimePage } from '../../../../pages/anime-page'
-import React from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { TabsNavigator } from '../../tab-navigator';
+import { RandomAnime } from '../../../../pages/random-anime';
+import { Top100Anime } from '../../../../pages/top-100-anime';
+import { StackNavigator } from '../../stack-navigator';
 import { CustomDrawer } from '../../custom-navigator/ui/custom-navigator'
-import { Authorization } from '../../../../pages/authorization'
-import { Registration } from '../../../../pages/registration'
+import { AnimePage } from '../../../../pages/anime-page' // Убедитесь, что этот импорт правильный
 
-const Drawer = createDrawerNavigator()
+const Drawer = createDrawerNavigator();
 
 export const AppNavigator = () => {
    return (
@@ -32,26 +30,26 @@ export const AppNavigator = () => {
                }}
             />
             <Drawer.Screen
-               name='Authorization'
-               component={Authorization}
+               name='AnimePage'
+               component={AnimePage}
+               options={{
+                  drawerPosition: 'right',
+               }}
+            />
+            <Drawer.Screen
+               name='RandomAnime'
+               component={RandomAnime}
                options={{
                   drawerPosition: 'right',
                   title: 'Топ-100',
                }}
             />
             <Drawer.Screen
-               name='Registration'
-               component={Registration}
+               name='Top100Anime'
+               component={Top100Anime}
                options={{
                   drawerPosition: 'right',
                   title: 'Випадкове аніме',
-               }}
-            />
-            <Drawer.Screen
-               name='Anime'
-               component={AnimePage}
-               options={{
-                  drawerPosition: 'right',
                }}
             />
          </Drawer.Navigator>

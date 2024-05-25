@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, FlatList, Text } from 'react-native'
+import { View } from 'react-native'
 import { styles } from './styles'
 import { TextInput } from 'react-native-paper'
 
@@ -17,7 +17,7 @@ const placeholders =[
       "Введіть пошту:"
 ];
 
-export const AuthorizationInput = ({typeOfInput, userInput, handleInput}) => {
+export const UserTextInput = ({typeOfInput, userInput, handleInput}) => {
    const [placeHolder, setPlaceHolder] = useState("");
 
    useEffect(() => {

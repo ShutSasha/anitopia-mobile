@@ -1,13 +1,25 @@
 import React, { useState } from 'react'
-import { View, FlatList } from 'react-native'
+import { FlatList, View } from 'react-native'
 import { styles } from './styles'
-import { FilterOptions } from '../../../widgets/filter-options'
+import { SearchInput } from '../../../shared/search-input'
+import { Header } from '../../../widgets/header'
+import { ResearchedAnimes } from '../../../widgets/searched-animes'
 
 export const Search = () => {
+   const [search, setSearch] = useState("")
+   const handleSearch = (text) => {
+      setSearch(text)
+   }
+
+   const handleDeleteSearch = () => {
+      setSearch("")
+   }
 
    return (
       <View style={styles.theWholePage}>
-         <FilterOptions />
+         <Header />
+         <SearchInput search={search} handleSearch={handleSearch} handleDeleteSearch={handleDeleteSearch}/>
+         <ResearchedAnimes userInput={search}/>
       </View>
    )
 }

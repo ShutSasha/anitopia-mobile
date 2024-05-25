@@ -25,7 +25,9 @@ export const FilterOptions = ({ visible, handleFilterModal }) => {
                      if (item.type === 'multipleSelect') {
                         return <MultipleSelect data={item} />;
                      } else if (item.type === 'valueRange') {
-                        return <ValueRange item={item} />;
+                        return <ValueRange item={item} checkTheNumberOfChars={true}/>;
+                     } else if(item.type === 'valueRangeWithoutCharsCheck'){
+                        return <ValueRange item={item} checkTheNumberOfChars={false}/>;
                      }
                      return null;
                   }}
