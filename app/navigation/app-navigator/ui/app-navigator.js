@@ -1,8 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { TabsNavigator } from '../../tab-navigator'
-import { Catalog } from '../../../../pages/catalog'
-import { Home } from '../../../../pages/home'
 import { AnimePage } from '../../../../pages/anime-page'
 import React from 'react'
 import { CustomDrawer } from '../../custom-navigator/ui/custom-navigator'
