@@ -1,5 +1,5 @@
 import { useOwnFonts } from './hooks/useOwnFonts'
-import {AppNavigator} from './app/navigation/app-navigator'
+import { AppNavigator } from './app/navigation/app-navigator'
 
 // const Tab = createBottomTabNavigator()
 
@@ -10,7 +10,5 @@ export default function App() {
       return null
    }
 
-   return (
-      <AppNavigator />
-   )
+   return <AppNavigator />
 }

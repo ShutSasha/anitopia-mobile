@@ -1,1 +1,1 @@
-export { UpdatedAnime } from './ui/UpdatedAnime'
+export { UpdatedAnime } from './ui/updated-anime'
