@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text } from 'react-native'
+import { TouchableOpacity, Text } from 'react-native'
 import { styles } from './styles'
 
-export const ButtonWithText = ({text}) => {
-
+export const ButtonWithText = ({ text, onPress }) => {
    return (
-      <View style={styles.buttonWrapper}>
+      <TouchableOpacity onPress={onPress} style={styles.buttonWrapper}>
          <Text style={styles.text}>{text}</Text>
-      </View>
-
+      </TouchableOpacity>
    )
 }
