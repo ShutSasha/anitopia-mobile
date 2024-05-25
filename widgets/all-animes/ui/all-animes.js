@@ -8,11 +8,10 @@ import { useState, useEffect } from 'react'
 export const AllAnimes = () => {
    const [animes, setAnimes] = useState([])
    const [currentPage, setCurrentPage] = useState(1)
-
+   const [query,setQuery] = useState("")
    const fetchMore = async () => {
       try {
-         const { data } = await fetchAnimeList(currentPage, 20)
-
+         const { data } = await fetchAnimeList(currentPage, 20,query)
          setAnimes((prevData) => [...prevData, ...data])
          setCurrentPage((prevPage) => prevPage + 1)
       } catch (error) {
