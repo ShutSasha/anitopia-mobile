@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../app/http'
 
-export const useFetchAnimeSeason = () => {
+export const useFetchRandomAnime = () => {
    const [randomAnime, setRandomAnime] = useState([])
 
    useEffect(() => {

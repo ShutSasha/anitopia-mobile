@@ -80,7 +80,7 @@ const AnimeInfo = ({ animeInfo }) => {
 
 export const AnimePage = ({ route }) => {
    const { anime } = route.params
-   const animeInfo = useFetchAnimeID(anime.id)
+   const animeInfo = useFetchAnimeID(anime)
    const comments = useComments(anime.id)
 
    if (!animeInfo) {

@@ -2,10 +2,10 @@ import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { styles } from './styles'
 
-export const AnimeCard = ({ animeItem }) => {
+export const AnimeCard = ({ animeItem, onPress }) => {
    return (
       <View style={styles.mainBlock}>
-         <TouchableOpacity activeOpacity={0.6}>
+         <TouchableOpacity activeOpacity={0.6} onPress={onPress}>
             <Image source={{ uri: animeItem.material_data.poster_url }} style={styles.cover} resizeMode='cover' />
             <Text style={styles.text}>{animeItem.title}</Text>
          </TouchableOpacity>
