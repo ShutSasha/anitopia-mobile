@@ -8,6 +8,10 @@ import { observer } from 'mobx-react-lite'
 export const Header = observer(() => {
    const { store } = useStore()
 
+   useEffect(() => {
+      console.log(store.user)
+   }, [])
+
    return (
       <SafeAreaView style={styles.container}>
          <View style={styles.blockWithElements}>
@@ -18,7 +22,11 @@ export const Header = observer(() => {
             <TouchableOpacity onPress={() => console.log('Профіль')}>
                <Image
                   style={styles.avatar}
-                  source={store.user ? { uri: store.user.avatarLink } : require('../../../assets/avatar.jpg')}
+                  source={
+                     store.user && store.user.avatarLink
+                        ? { uri: store.user.avatarLink }
+                        : require('../../../assets/avatar.jpg')
+                  }
                />
             </TouchableOpacity>
          </View>
