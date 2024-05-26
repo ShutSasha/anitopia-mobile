@@ -21,7 +21,7 @@ export const useFetchAnimeID = (anime) => {
       if (animeID) {
          fetchAnimeByID()
       } else {
-         console.log(error)
+         console.log('No anime ID')
       }
    }, [animeID])
 
