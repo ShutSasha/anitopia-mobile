@@ -83,45 +83,31 @@ export const CustomDrawer = (props) => {
                />
             </View>
          </DrawerContentScrollView>
-         <View style={{ paddingHorizontal: 20, paddingTop: 25, paddingBottom : 15, borderTopWidth: 1, borderTopColor: '#ccc' }}>
-            <View style={{ flexDirection: 'column'}}>
-               <TouchableOpacity style={{ flexDirection: 'row', paddingBottom: 30}}>
+         <View style={{ paddingTop: 25, paddingBottom : 15, borderTopWidth: 1, borderTopColor: '#ccc' }}>
+            <DrawerItem
+               label="Зареєструватися"
+               onPress={() => props.navigation.navigate('Registration')}
+               icon={() => (
                   <AntDesign name="adduser" size={22} color="#fff" />
-                  <Text
-                     style={{
-                        fontSize: 17,
-                        marginLeft: 25,
-                        color: '#fff'
-                     }}
-                  >
-                     Зареєструватися
-                  </Text>
-               </TouchableOpacity>
-               <TouchableOpacity style={{ flexDirection: 'row', paddingBottom: 30}}>
+               )}
+               labelStyle={{ color: '#fff', fontSize: 17 }}
+            />
+            <DrawerItem
+               label="Авторизизуватися"
+               onPress={() => props.navigation.navigate('Authorization')}
+               icon={() => (
                   <AntDesign name="user" size={22} color="#fff" />
-                  <Text
-                     style={{
-                        fontSize: 17,
-                        marginLeft: 25,
-                        color: '#fff'
-                     }}
-                  >
-                     Авторизизуватися
-                  </Text>
-               </TouchableOpacity>
-               <TouchableOpacity style={{ flexDirection: 'row', paddingBottom: 30}}>
+               )}
+               labelStyle={{ color: '#fff', fontSize: 17 }}
+            />
+            <DrawerItem
+               label="Вийти"
+               onPress={() => props.navigation.navigate('Tabs')}
+               icon={() => (
                   <Ionicons name="exit-outline" size={22} color="#fff" />
-                  <Text
-                     style={{
-                        fontSize: 17,
-                        marginLeft: 25,
-                        color: '#fff'
-                     }}
-                  >
-                     Вийти
-                  </Text>
-               </TouchableOpacity>
-            </View>
+               )}
+               labelStyle={{ color: '#fff', fontSize: 17 }}
+            />
          </View>
       </View>
    )

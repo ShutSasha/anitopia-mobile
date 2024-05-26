@@ -6,6 +6,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 import { AnimePage } from '../../../../pages/anime-page'
 import React from 'react'
 import { CustomDrawer } from '../../custom-navigator/ui/custom-navigator'
+import { Authorization } from '../../../../pages/authorization'
+import { Registration } from '../../../../pages/registration'
 
 const Drawer = createDrawerNavigator()
 
@@ -41,7 +43,7 @@ export const AppNavigator = () => {
                component={RandomAnime}
                options={{
                   drawerPosition: 'right',
-                  title: 'Топ-100',
+                  title: 'Рандомне аніме',
                }}
             />
             <Drawer.Screen
@@ -49,7 +51,23 @@ export const AppNavigator = () => {
                component={Top100Anime}
                options={{
                   drawerPosition: 'right',
-                  title: 'Випадкове аніме',
+                  title: 'Топ 100 аніме',
+               }}
+            />
+            <Drawer.Screen
+               name='Registration'
+               component={Registration}
+               options={{
+                  drawerPosition: 'right',
+                  title: 'Реєстрація',
+               }}
+            />
+            <Drawer.Screen
+               name='Authorization'
+               component={Authorization}
+               options={{
+                  drawerPosition: 'right',
+                  title: 'Авторизація',
                }}
             />
          </Drawer.Navigator>
