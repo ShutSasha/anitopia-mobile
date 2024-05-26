@@ -16,7 +16,7 @@ import Top100Icon from '../../../../assets/top-100-icon.svg'
 import { styles } from './styles'
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
-import { RandomAnime } from '../../../../pages/random-anime'
+import { AntDesign } from '@expo/vector-icons';
 export const CustomDrawer = (props) => {
    return (
       <View style={{ flex: 1, backgroundColor: '#343A40' }}>
@@ -83,9 +83,33 @@ export const CustomDrawer = (props) => {
                />
             </View>
          </DrawerContentScrollView>
-         <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: '#ccc' }}>
-            <TouchableOpacity style={{ paddingVertical: 15 }}>
-               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+         <View style={{ paddingHorizontal: 20, paddingTop: 25, paddingBottom : 15, borderTopWidth: 1, borderTopColor: '#ccc' }}>
+            <View style={{ flexDirection: 'column'}}>
+               <TouchableOpacity style={{ flexDirection: 'row', paddingBottom: 30}}>
+                  <AntDesign name="adduser" size={22} color="#fff" />
+                  <Text
+                     style={{
+                        fontSize: 17,
+                        marginLeft: 25,
+                        color: '#fff'
+                     }}
+                  >
+                     Зареєструватися
+                  </Text>
+               </TouchableOpacity>
+               <TouchableOpacity style={{ flexDirection: 'row', paddingBottom: 30}}>
+                  <AntDesign name="user" size={22} color="#fff" />
+                  <Text
+                     style={{
+                        fontSize: 17,
+                        marginLeft: 25,
+                        color: '#fff'
+                     }}
+                  >
+                     Авторизизуватися
+                  </Text>
+               </TouchableOpacity>
+               <TouchableOpacity style={{ flexDirection: 'row', paddingBottom: 30}}>
                   <Ionicons name="exit-outline" size={22} color="#fff" />
                   <Text
                      style={{
@@ -94,10 +118,10 @@ export const CustomDrawer = (props) => {
                         color: '#fff'
                      }}
                   >
-                     Sign Out
+                     Вийти
                   </Text>
-               </View>
-            </TouchableOpacity>
+               </TouchableOpacity>
+            </View>
          </View>
       </View>
    )
