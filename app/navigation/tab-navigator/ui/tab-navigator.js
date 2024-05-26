@@ -1,16 +1,15 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Footer } from '../../../../widgets/footer'
-import { Home } from '../../../../pages/home'
-import { Catalog } from '../../../../pages/catalog'
-import { Search } from '../../../../pages/search'
-import { StackNavigator } from '../../stack-navigator'
+import { HomeStack } from '../../home-stack'
+import { CatalogStack } from '../../catalog-stack'
+import { SearchStack } from '../../search-stack'
 
 const Tab = createBottomTabNavigator()
 
 const TabScreens = [
-   { name: 'Home', component: Home },
-   { name: 'Catalog', component: Catalog },
-   { name: 'Search', component: Search }
+   { name: 'HomeStack', component: HomeStack },
+   { name: 'CatalogStack', component: CatalogStack },
+   { name: 'SearchStack', component: SearchStack }
 ]
 
 export const TabsNavigator = () => {

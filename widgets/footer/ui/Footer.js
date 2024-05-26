@@ -11,9 +11,9 @@ export const Footer = () => {
    const navigation = useNavigation();
 
    const footerOptions = [
-      { label: 'Головна', onPress: () => navigation.navigate('Home'), Icon: MainPageIcon },
-      { label: 'Каталог', onPress: () => navigation.navigate('Catalog'), Icon: CatalogIcon },
-      { label: 'Пошук', onPress: () => navigation.navigate('Search'), Icon: SearchIcon },
+      { label: 'Головна', onPress: () => navigation.navigate('HomeStack'), Icon: MainPageIcon },
+      { label: 'Каталог', onPress: () => navigation.navigate('CatalogStack'), Icon: CatalogIcon },
+      { label: 'Пошук', onPress: () => navigation.navigate('SearchStack'), Icon: SearchIcon },
       { label: 'Колекції', onPress: () => console.log('Колекції'), Icon: CollectionsIcon },
       { label: 'Меню', onPress: () => navigation.openDrawer(), Icon: MenuIcon },
    ]

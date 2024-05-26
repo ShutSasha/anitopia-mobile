@@ -95,7 +95,6 @@ export const AnimePage = ({ route }) => {
             <Text style={styles.commentsTitle}>Коментарі</Text>
             <TextInput style={styles.commentInput} placeholder='Введіть ваш коментар...' />
          </ScrollView>
-         <Footer />
       </>
    )
 }

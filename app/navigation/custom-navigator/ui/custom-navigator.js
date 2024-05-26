@@ -71,7 +71,7 @@ export const CustomDrawer = (props) => {
                />
                <DrawerItem
                   label="Налаштування"
-                  onPress={() => props.navigation.navigate('Tabs')}
+                  onPress={() => props.navigation.navigate('HomeStack')}
                   icon={() => (
                      <Ionicons
                         name="settings-outline"
