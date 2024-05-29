@@ -8,6 +8,8 @@ import React from 'react'
 import { CustomDrawer } from '../../custom-navigator/ui/custom-navigator'
 import { Authorization } from '../../../../pages/authorization'
 import { Registration } from '../../../../pages/registration'
+import { Profile } from '../../../../pages/profile'
+import { ProfileStack } from '../../profile-stack'
 
 const Drawer = createDrawerNavigator()
 
@@ -65,6 +67,14 @@ export const AppNavigator = () => {
             <Drawer.Screen
                name='Authorization'
                component={Authorization}
+               options={{
+                  drawerPosition: 'right',
+                  title: 'Авторизація',
+               }}
+            />
+            <Drawer.Screen
+               name='ProfileStack'
+               component={ProfileStack}
                options={{
                   drawerPosition: 'right',
                   title: 'Авторизація',

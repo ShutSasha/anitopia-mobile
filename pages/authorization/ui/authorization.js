@@ -5,8 +5,11 @@ import { UserTextInput } from '../../../shared/text-input'
 import { ButtonWithText } from '../../../shared/button-with-text'
 import { ButtonWithImage } from '../../../shared/button-with-image'
 import { useStore } from '../../../hooks/useStore'
+import { useNavigation } from '@react-navigation/native'
 
 export const Authorization = () => {
+   const navigation = useNavigation();
+   
    const { store } = useStore()
    const [userName, setUserName] = useState('')
    const [password, setPassword] = useState('')
@@ -25,7 +28,7 @@ export const Authorization = () => {
          .login(userName, password)
          .then((isLoggedIn) => {
             if (isLoggedIn) {
-               console.log('success logged in')
+               navigation.navigate('HomeStack')
             }
          })
          .catch((err) => console.error(err))

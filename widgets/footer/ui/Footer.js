@@ -6,9 +6,9 @@ import CatalogIcon from '../../../assets/catalog-icon.svg'
 import SearchIcon from '../../../assets/search-icon.svg'
 import CollectionsIcon from '../../../assets/collection-icon.svg'
 import MenuIcon from '../../../assets/menu-icon.svg'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native'
 export const Footer = () => {
-   const navigation = useNavigation();
+   const navigation = useNavigation()
 
    const footerOptions = [
       { label: 'Головна', onPress: () => navigation.navigate('HomeStack'), Icon: MainPageIcon },

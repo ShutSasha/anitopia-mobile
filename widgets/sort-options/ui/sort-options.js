@@ -5,7 +5,7 @@ import { AntDesign } from '@expo/vector-icons'
 import { CustomRadiobutton } from '../../../shared/custom-radiobutton'
 
 export const SortOptions = ({ visible, handleSortModal }) => {
-   const sortOptions = ['Рейтингом', 'Кількістю оцінок', 'Датою випуску']
+   const sortOptions = ['Рейтингом', 'Кількістю оцінок', 'Роком', 'Датою випуску']
    const sortOrderOptions = ['За зростанням', 'За спаданням']
 
    const [checkedSortOption, setCheckedSortOption] = useState(sortOptions[0])
