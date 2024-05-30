@@ -28,6 +28,10 @@ export const RatedAnimeCard = ({ ratedAnime, userRating, index, count }) => {
       navigation.navigate('AnimePage', { anime: anime })
    }
 
+   const formatUserRating = (rating) => {
+      return rating < 10 ? `${rating}  ` : rating.toString()
+   }
+
    return (
       <TouchableOpacity
          activeOpacity={0.6}
@@ -41,7 +45,7 @@ export const RatedAnimeCard = ({ ratedAnime, userRating, index, count }) => {
          <View style={styles.ratingsWrapper}>
             <View style={{ ...styles.ratingWrapper, marginRight: 10 }}>
                <AntDesign name='star' size={24} color='#FF6666' />
-               <Text>{userRating}</Text>
+               <Text>{formatUserRating(userRating)}</Text>
             </View>
             <View style={styles.ratingWrapper}>
                <AntDesign name='star' size={24} color='#ED8A19' />

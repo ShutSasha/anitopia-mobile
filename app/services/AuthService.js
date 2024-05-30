@@ -7,10 +7,10 @@ export default class AuthService {
 
    static async registration(username, password, email, pictureLink) {
       return $api.post('/api/auth/registration', {
-         username,
-         password,
-         email,
-         pictureLink,
+         username: username,
+         password: password,
+         email: email,
+         pictureLink: pictureLink,
       })
    }
 

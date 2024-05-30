@@ -9,16 +9,24 @@ const placeholders = ["Введіть ім'я користувача:", 'Вве�
 
 export const UserTextInput = ({ typeOfInput, userInput, handleInput }) => {
    const [placeHolder, setPlaceHolder] = useState('')
+   const [error, setError] = useState('')
 
    useEffect(() => {
-      if (typeOfInput === typesOfInput[0]) {
-         setPlaceHolder(placeholders[0])
-      } else if (typeOfInput === typesOfInput[1]) {
-         setPlaceHolder(placeholders[1])
-      } else if (typeOfInput === typesOfInput[2]) {
-         setPlaceHolder(placeholders[2])
-      } else if (typeOfInput === typesOfInput[3]) {
-         setPlaceHolder(placeholders[3])
+      switch (typeOfInput) {
+         case 'userName':
+            setPlaceHolder(placeholders[0])
+            break
+         case 'password':
+            setPlaceHolder(placeholders[1])
+            break
+         case 'verifyPassword':
+            setPlaceHolder(placeholders[2])
+            break
+         case 'email':
+            setPlaceHolder(placeholders[3])
+            break
+         default:
+            setPlaceHolder('')
       }
    }, [typeOfInput])
 

@@ -48,7 +48,6 @@ export const styles = StyleSheet.create({
    },
 
    ratingsWrapper: {
-      justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'row',
    },
