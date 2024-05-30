@@ -8,10 +8,6 @@ import { observer } from 'mobx-react-lite'
 export const Header = observer(() => {
    const { store } = useStore()
 
-   useEffect(() => {
-      console.log(store.user)
-   }, [])
-
    return (
       <SafeAreaView style={styles.container}>
          <View style={styles.blockWithElements}>
