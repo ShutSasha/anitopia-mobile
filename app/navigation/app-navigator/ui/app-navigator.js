@@ -10,6 +10,7 @@ import { Authorization } from '../../../../pages/authorization'
 import { Registration } from '../../../../pages/registration'
 import { Profile } from '../../../../pages/profile'
 import { ProfileStack } from '../../profile-stack'
+import { useStore } from '../../../../hooks/useStore'
 
 const Drawer = createDrawerNavigator()
 

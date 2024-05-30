@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
    },
 
    animeCoverAndName: {
-      width: '65%',
+      width: '90%',
       height: '100%',
       flexDirection: 'row',
       alignItems: 'center',
@@ -59,7 +59,6 @@ export const styles = StyleSheet.create({
       alignItems: 'flex-end',
       fontFamily: 'Raleway_600SemiBold',
       fontSize: 14,
-      paddingTop: 15
+      paddingTop: 15,
    },
-
 })

@@ -8,17 +8,24 @@ export const styles = StyleSheet.create({
       backgroundColor: '#343A40',
       borderBottomWidth: 3,
       borderColor: '#FF6666',
+      justifyContent: 'center',
    },
 
    blockWithElements: {
       width: '100%',
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
       alignItems: 'center',
-      paddingLeft: 15,
-      paddingRight: 15,
-      paddingTop: 5,
-      paddingBottom: 15,
+   },
+
+   notificationIcon: {
+      position: 'absolute',
+      left: 15,
+   },
+
+   avatarContainer: {
+      position: 'absolute',
+      right: 15,
    },
 
    name: {
@@ -31,7 +38,6 @@ export const styles = StyleSheet.create({
       width: 48,
       height: 48,
       borderRadius: 24,
-      resizeMode: 'contain',
-      objectFit: 'cover',
+      resizeMode: 'cover',
    },
 })

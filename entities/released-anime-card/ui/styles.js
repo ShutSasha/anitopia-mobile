@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
    },
 
    animeCoverAndName: {
-      width: '65%',
+      width: '75%',
       height: '100%',
       flexDirection: 'row',
       alignItems: 'center',

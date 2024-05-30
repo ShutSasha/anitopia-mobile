@@ -17,13 +17,21 @@ export const UserData = () => {
       return value ? value : 'Не вказано'
    }
 
+   const formatDate = (dateString) => {
+      const date = new Date(dateString)
+      const day = String(date.getDate()).padStart(2, '0')
+      const month = String(date.getMonth() + 1).padStart(2, '0')
+      const year = date.getFullYear()
+      return `${day}.${month}.${year}`
+   }
+
    const userData = {
-      'Дата реєстрації': registrationDate,
-      "Ім'я": firstName,
-      Прізвище: lastName,
-      Країна: country,
-      Стать: sex,
-      Вік: age,
+      'Дата реєстрації': formatDate(registrationDate),
+      "Ім'я": getValueOrDefault(firstName),
+      Прізвище: getValueOrDefault(lastName),
+      Країна: getValueOrDefault(country),
+      Стать: getValueOrDefault(sex),
+      Вік: getValueOrDefault(age),
    }
 
    return (
@@ -36,7 +44,7 @@ export const UserData = () => {
             photo={getValueOrDefault(avatarLink)}
          />
          {userDataTitles.map((title) => (
-            <UserInfo key={title} label={title} value={getValueOrDefault(userData[title])} />
+            <UserInfo key={title} label={title} value={userData[title]} />
          ))}
       </Container>
    )

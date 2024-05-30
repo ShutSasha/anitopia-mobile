@@ -25,9 +25,6 @@ export const RatedAnime = observer(() => {
       fetchUserByID()
    }, [store.user.id])
 
-   // const userData = useFetchUserData()
-   // const ratedAnime = userData.animeRatings
-
    return (
       <Container styles={{ width: '100%' }}>
          <MainTitle nameOfTheBlock={'Оцінені аніме'} topBorder={true} />

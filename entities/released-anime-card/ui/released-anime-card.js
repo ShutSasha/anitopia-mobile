@@ -3,6 +3,7 @@ import { Image, Text, TouchableOpacity, View } from 'react-native'
 import { styles } from './styles'
 
 export const ReleasedAnimeCard = ({ releasedItem, onCardPress, index, count }) => {
+   const trimmedTitle = releasedItem.title.length > 22 ? releasedItem.title.slice(0, 22) + '...' : releasedItem.title
    return (
       <TouchableOpacity
          activeOpacity={0.6}
@@ -11,7 +12,7 @@ export const ReleasedAnimeCard = ({ releasedItem, onCardPress, index, count }) =
       >
          <View style={styles.animeCoverAndName}>
             <Image style={styles.animeCover} source={{ uri: releasedItem.poster_url }} />
-            <Text style={styles.animeName}>{releasedItem.title}</Text>
+            <Text style={styles.animeName}>{trimmedTitle}</Text>
          </View>
          <View style={styles.additionalInfo}>
             <View style={{ ...styles.text, paddingTop: 5 }}>
