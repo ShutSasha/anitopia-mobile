@@ -1,26 +1,25 @@
 import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-
-   searchInputStyle:{
+   searchInputStyle: {
       padding: 10,
       fontSize: 17,
    },
 
-   inputStyle:{
+   inputStyle: {
       fontSize: 17,
    },
 
-   styleInputGroup:{
-      paddingRight: 15
+   styleInputGroup: {
+      paddingRight: 15,
    },
 
-   styleMainWrapper:{
-      padding: 20
+   styleMainWrapper: {
+      padding: 20,
    },
 
-   header:{
+   header: {
       paddingHorizontal: 20,
-      fontSize: 19
+      fontSize: 19,
    },
 })

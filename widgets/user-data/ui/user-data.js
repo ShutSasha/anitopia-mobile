@@ -37,7 +37,7 @@ export const UserData = () => {
    return (
       <Container styles={{ width: '100%' }}>
          <MainTitle nameOfTheBlock={'Профіль'} topBorder={false} />
-         <BackgroundPhoto backgroundPicture={require('../../../assets/my-hero-academ-cover.webp')} />
+         <BackgroundPhoto backgroundPicture={require('../../../assets/animeCover.png')} />
          <UserPhotoAndNickname
             nickname={getValueOrDefault(username)}
             userRoles={roles}

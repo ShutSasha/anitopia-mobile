@@ -4,7 +4,6 @@ import { BASE_URL } from '../app/http'
 
 export const useFetchTop100Anime = () => {
    const [topAnime, setTopAnime] = useState([])
-   console.log(topAnime)
    useEffect(() => {
       const fetchTopAnime = async () => {
          try {

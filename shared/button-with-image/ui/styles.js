@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-   buttonWrapper:{
+   buttonWrapper: {
       width: 370,
       height: 60,
       borderRadius: 4,
@@ -9,12 +9,11 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: '#555765',
       marginHorizontal: 20,
-      marginBottom: 30
+      marginBottom: 30,
    },
 
-   image:{
+   image: {
       height: 30,
       width: 30,
    },
-
 })

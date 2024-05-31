@@ -25,6 +25,5 @@ export const styles = StyleSheet.create({
       fontFamily: 'Raleway_600SemiBold',
       lineHeight: 24,
       color: '#FFFFFF',
-   }
-
+   },
 })

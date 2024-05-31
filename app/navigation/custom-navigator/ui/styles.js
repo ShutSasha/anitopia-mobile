@@ -10,22 +10,22 @@ export const styles = StyleSheet.create({
       marginLeft: 20,
    },
    switchTextContainer: {
-      flexDirection: "row",
-      alignItems: "center",
+      flexDirection: 'row',
+      alignItems: 'center',
       marginLeft: 7,
       paddingVertical: 5,
    },
    preferences: {
       fontSize: 16,
-      color: "#ccc",
+      color: '#ccc',
       paddingTop: 10,
-      fontWeight: "500",
+      fontWeight: '500',
       paddingLeft: 20,
    },
    switchText: {
       fontSize: 17,
-      color: "",
+      color: '',
       paddingTop: 10,
-      fontWeight: "bold",
+      fontWeight: 'bold',
    },
-});
+})

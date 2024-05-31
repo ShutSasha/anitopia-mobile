@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)'
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
    },
 
    container: {
@@ -16,41 +16,40 @@ export const styles = StyleSheet.create({
       paddingTop: 10,
    },
 
-   buttonsWrapper:{
+   buttonsWrapper: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       paddingHorizontal: 20,
-      paddingVertical: 15
+      paddingVertical: 15,
    },
 
-   dropButton:{
-      backgroundColor: "#FFFFFF",
-      borderColor: "#868E96",
+   dropButton: {
+      backgroundColor: '#FFFFFF',
+      borderColor: '#868E96',
       borderWidth: 1,
       width: '45%',
       height: 45,
       borderRadius: 3,
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
    },
 
-   applyButton:{
-      backgroundColor: "#FF6666",
+   applyButton: {
+      backgroundColor: '#FF6666',
       width: '45%',
       height: 45,
       borderRadius: 3,
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
    },
 
-   dropButtonText:{
+   dropButtonText: {
       fontSize: 17,
-      color: "#868E96",
+      color: '#868E96',
    },
 
-   applyButtonText:{
+   applyButtonText: {
       fontSize: 17,
-      color: '#FFFFFF'
+      color: '#FFFFFF',
    },
-
 })

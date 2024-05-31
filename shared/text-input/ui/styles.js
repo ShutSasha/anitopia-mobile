@@ -1,17 +1,16 @@
 import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-   inputWrapper:{
+   inputWrapper: {
       paddingHorizontal: 20,
-      paddingBottom: 30
+      paddingBottom: 30,
    },
 
-   textInput:{
+   textInput: {
       width: 370,
       fontSize: 18,
       height: 60,
       color: '#FFFFFF',
-      backgroundColor: '#FF6666'
+      backgroundColor: '#FF6666',
    },
-
 })

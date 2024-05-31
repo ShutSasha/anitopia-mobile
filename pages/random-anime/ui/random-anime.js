@@ -9,7 +9,7 @@ export const RandomAnime = () => {
 
    return (
       <View style={styles.wrapper}>
-         <AnimePage route={{ params: { anime: randomAnime } }} />
+         <AnimePage route={{ params: { animeID: randomAnime._id } }} />
          <Footer />
       </View>
    )

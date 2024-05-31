@@ -1,21 +1,20 @@
 import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-   inputWrapper:{
+   inputWrapper: {
       width: '100%',
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
-      paddingBottom: 30
+      paddingBottom: 30,
    },
 
-   checkBoxSquare:{
-      marginRight: 15
+   checkBoxSquare: {
+      marginRight: 15,
    },
 
-   textInput:{
+   textInput: {
       fontSize: 15,
       color: '#FFFFFF',
    },
-
 })

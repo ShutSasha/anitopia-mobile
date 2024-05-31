@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)'
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
    },
 
    container: {
@@ -15,10 +15,10 @@ export const styles = StyleSheet.create({
       borderRadius: 10,
    },
 
-   titleAndCloseIcon:{
+   titleAndCloseIcon: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      paddingBottom: 15
+      paddingBottom: 15,
    },
 
    title: {
@@ -26,21 +26,21 @@ export const styles = StyleSheet.create({
       fontFamily: 'Inter_400Regular',
       lineHeight: 19,
       color: '#000000',
-      paddingBottom: 15
+      paddingBottom: 15,
    },
 
    sortOption: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingBottom: 10
+      paddingBottom: 10,
    },
 
-   line:{
+   line: {
       width: '100%',
       paddingHorizontal: 20,
       height: 2,
       backgroundColor: '#868E96',
-      marginBottom: 30
+      marginBottom: 30,
    },
 
    label: {
@@ -61,5 +61,4 @@ export const styles = StyleSheet.create({
       padding: 10,
       borderRadius: 10,
    },
-
 })

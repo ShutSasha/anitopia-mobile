@@ -1,18 +1,13 @@
 import * as React from 'react'
-import {
-   Modal,
-   View,
-   Text,
-   TouchableOpacity,
-} from 'react-native'
+import { Modal, View, Text, TouchableOpacity } from 'react-native'
 import { styles } from './styles'
 import { MultipleSelect } from '../../../entities/multi-select'
 import { ValueRange } from '../../../entities/value-range'
 import { KeyboardAwareFlatList } from 'react-native-keyboard-aware-scroll-view'
-import {multiSelectData} from '../../../consts/filter-options-list'
-import {valueRangeData} from '../../../consts/value-range-list'
+import { multiSelectData } from '../../../consts/filter-options-list'
+import { valueRangeData } from '../../../consts/value-range-list'
 
-const combinedData = [...multiSelectData, ...valueRangeData];
+const combinedData = [...multiSelectData, ...valueRangeData]
 
 export const FilterOptions = ({ visible, handleFilterModal }) => {
    return (
@@ -23,13 +18,13 @@ export const FilterOptions = ({ visible, handleFilterModal }) => {
                   data={combinedData}
                   renderItem={({ item }) => {
                      if (item.type === 'multipleSelect') {
-                        return <MultipleSelect data={item} />;
+                        return <MultipleSelect data={item} />
                      } else if (item.type === 'valueRange') {
-                        return <ValueRange item={item} checkTheNumberOfChars={true}/>;
-                     } else if(item.type === 'valueRangeWithoutCharsCheck'){
-                        return <ValueRange item={item} checkTheNumberOfChars={false}/>;
+                        return <ValueRange item={item} checkTheNumberOfChars={true} />
+                     } else if (item.type === 'valueRangeWithoutCharsCheck') {
+                        return <ValueRange item={item} checkTheNumberOfChars={false} />
                      }
-                     return null;
+                     return null
                   }}
                   keyboardOpeningTime={0.25}
                   keyExtractor={(item) => item.id.toString()}

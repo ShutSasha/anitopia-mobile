@@ -4,12 +4,14 @@ import { styles } from './styles'
 import { AnimeCard } from '../../../entities/anime-card'
 import { useState, useEffect } from 'react'
 import { fetchSearchAnime } from '../../../hooks/useFetchSearchAnime'
+import { useNavigation } from '@react-navigation/native'
 
 export const ResearchedAnimes = ({ userInput }) => {
    const [foundAnime, setFoundAnime] = useState([])
    const [currentPage, setCurrentPage] = useState(1)
    const [hasMore, setHasMore] = useState(true)
    const timerRef = React.useRef(null)
+   const navigation = useNavigation()
 
    const fetchMoreFoundAnime = async () => {
       if (!hasMore) return
@@ -63,6 +65,10 @@ export const ResearchedAnimes = ({ userInput }) => {
       )
    }
 
+   const handlePressAnime = (anime) => {
+      navigation.navigate('AnimePage', { animeID: anime._id })
+   }
+
    return (
       <View style={styles.theWholePage}>
          <FlatList
@@ -70,7 +76,7 @@ export const ResearchedAnimes = ({ userInput }) => {
             showsVerticalScrollIndicator={false}
             initialNumToRender={foundAnime.length}
             data={foundAnime}
-            renderItem={({ item }) => <AnimeCard animeItem={item} />}
+            renderItem={({ item }) => <AnimeCard animeItem={item} onPress={() => handlePressAnime(item)} />}
             keyExtractor={(item) => item._id.toString()}
             onEndReached={fetchMoreFoundAnime}
             bounces={true}

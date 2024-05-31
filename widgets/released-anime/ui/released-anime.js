@@ -11,7 +11,7 @@ export const ReleasedAnime = () => {
    const navigation = useNavigation()
 
    const handleCardPress = (anime) => {
-      navigation.navigate('AnimePage', { anime: anime })
+      navigation.navigate('AnimePage', { animeID: anime._id })
    }
 
    return (

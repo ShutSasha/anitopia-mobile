@@ -11,13 +11,12 @@ export const styles = StyleSheet.create({
    cover: {
       width: '90%',
       height: 160,
-      borderRadius: 10
+      borderRadius: 10,
    },
 
    text: {
       fontSize: 13,
       fontFamily: 'Raleway_500Medium',
       textAlign: 'center',
-   }
-
+   },
 })

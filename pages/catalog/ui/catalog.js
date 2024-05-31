@@ -22,9 +22,9 @@ export const Catalog = () => {
    return (
       <View style={styles.theWholePage}>
          <Header />
-         <SortAndFilter handleSortModal={handleSortModal} handleFilterModal={handleFilterModal}/>
+         <SortAndFilter handleSortModal={handleSortModal} handleFilterModal={handleFilterModal} />
          <SortOptions visible={sortModal} handleSortModal={handleSortModal} />
-         <FilterOptions visible={filterModal} handleFilterModal={handleFilterModal}/>
+         <FilterOptions visible={filterModal} handleFilterModal={handleFilterModal} />
          <FlatList
             data={[<AllAnimes />]}
             renderItem={({ item }) => <View style={styles.container}>{item}</View>}

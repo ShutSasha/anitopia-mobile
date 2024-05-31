@@ -9,7 +9,7 @@ export const AnimeSeason = () => {
    const seasonAnime = useFetchAnimeSeason()
 
    const handleCardPress = (anime) => {
-      navigation.navigate('AnimePage', { anime })
+      navigation.navigate('AnimePage', { animeID: anime._id })
    }
 
    return (

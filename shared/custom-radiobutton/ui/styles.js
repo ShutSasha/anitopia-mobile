@@ -1,19 +1,18 @@
 import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-
    rootContainer: {
       paddingRight: 5,
    },
 
-   optionContainer:{
-      flexDirection: "row",
-      paddingBottom: 15
+   optionContainer: {
+      flexDirection: 'row',
+      paddingBottom: 15,
    },
 
    label: {
-      justifyContent: "center",
-      alignItems: "center",
+      justifyContent: 'center',
+      alignItems: 'center',
       paddingRight: 20,
       paddingLeft: 10,
    },

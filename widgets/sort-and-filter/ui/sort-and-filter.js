@@ -5,19 +5,11 @@ import { SortFilterTitle } from '../../../entities/sort-filter-title'
 import SortIcon from '../../../assets/sort-icon.svg'
 import FilterIcon from '../../../assets/filter-icon.svg'
 
-export const SortAndFilter = ({handleSortModal, handleFilterModal}) => {
+export const SortAndFilter = ({ handleSortModal, handleFilterModal }) => {
    return (
       <View style={styles.mainBlock}>
-         <SortFilterTitle
-            image={SortIcon}
-            text={"Сортування"}
-            handleModal={handleSortModal}
-         />
-         <SortFilterTitle
-            image={FilterIcon}
-            text={"Фільтри"}
-            handleModal={handleFilterModal}
-         />
+         <SortFilterTitle image={SortIcon} text={'Сортування'} handleModal={handleSortModal} />
+         <SortFilterTitle image={FilterIcon} text={'Фільтри'} handleModal={handleFilterModal} />
       </View>
    )
 }

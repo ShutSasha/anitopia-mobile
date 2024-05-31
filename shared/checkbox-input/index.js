@@ -1,1 +1,1 @@
-export { CheckBoxInput } from './ui/checkbox-input'
+export { CheckboxInput } from './ui/checkbox-input'

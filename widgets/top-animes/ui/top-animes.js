@@ -10,7 +10,7 @@ export const TopAnimes = ({}) => {
    const navigation = useNavigation()
 
    const handlePressAnime = (anime) => {
-      navigation.navigate('AnimePage', { anime: { ...anime, id: anime._id } })
+      navigation.navigate('AnimePage', { animeID: anime._id })
    }
 
    return (

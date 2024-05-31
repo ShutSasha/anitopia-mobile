@@ -8,7 +8,11 @@ export const useFetchAnimeSeason = () => {
    useEffect(() => {
       const fetchAnimeSeason = async () => {
          try {
-            const { data } = await axios.get(`${BASE_URL}/api/anime/season`)
+            const response = await axios.get(`${BASE_URL}/api/anime/season`)
+            const data = response.data.map((item) => ({
+               ...item,
+               _id: item.id,
+            }))
             setAnimeSeason(data)
          } catch (error) {
             console.log(error)

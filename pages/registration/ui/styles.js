@@ -17,20 +17,18 @@ export const styles = StyleSheet.create({
       padding: 16,
    },
 
-   title:{
+   title: {
       fontSize: 48,
       color: '#FFFFFF',
       fontFamily: 'BalooTamma2_800ExtraBold',
       marginBottom: 20,
-      marginTop: 20
+      marginTop: 20,
    },
 
-   nameOfPage:{
+   nameOfPage: {
       fontSize: 24,
       color: '#FFFFFF',
       fontFamily: 'BalooTamma2_800ExtraBold',
-      marginBottom: 60
+      marginBottom: 60,
    },
-
-
 })

@@ -2,11 +2,11 @@ export const valueRangeData = [
    {
       id: '111',
       type: 'valueRange',
-      header: "Рік"
+      header: 'Рік',
    },
    {
       id: '211',
       type: 'valueRangeWithoutCharsCheck',
-      header: "Кількість серій"
+      header: 'Кількість серій',
    },
-];
+]

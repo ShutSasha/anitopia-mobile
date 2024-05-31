@@ -9,6 +9,7 @@ import { AntDesign } from '@expo/vector-icons'
 import { EvilIcons } from '@expo/vector-icons'
 import { useStore } from '../../../../hooks/useStore'
 import { useNavigation } from '@react-navigation/native'
+
 export const CustomDrawer = (props) => {
    const { store } = useStore()
    const navigation = useNavigation()

@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../app/http'
-import { transformResponseToAnime } from '../shared/lib/anime/anime-info'
+import { transformResponseToAnime } from '../shared/lib/anime/transform-anime-info-response'
 
-export const useFetchAnimeID = (anime) => {
+export const useFetchAnimeID = (animeID) => {
    const [animeInfo, setAnimeInfo] = useState(null)
-   const animeID = anime._id || anime.id
 
    useEffect(() => {
       const fetchAnimeByID = async () => {

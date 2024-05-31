@@ -12,27 +12,27 @@ export const styles = StyleSheet.create({
       alignSelf: 'auto',
    },
 
-   title:{
+   title: {
       fontSize: 48,
       color: '#FFFFFF',
       fontFamily: 'BalooTamma2_800ExtraBold',
       marginBottom: 20,
-      marginTop: 20
+      marginTop: 20,
    },
 
-   nameOfPage:{
+   nameOfPage: {
       fontSize: 24,
       color: '#FFFFFF',
       fontFamily: 'BalooTamma2_800ExtraBold',
-      marginBottom: 60
+      marginBottom: 60,
    },
 
-   registationText:{
+   registationText: {
       fontSize: 15,
       textDecorationLine: 'underline',
       color: '#FFFFFF',
       fontFamily: 'BalooTamma2_800ExtraBold',
       marginBottom: 30,
-      marginTop: 5
+      marginTop: 5,
    },
 })
