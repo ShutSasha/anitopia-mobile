@@ -83,15 +83,15 @@ export const CustomDrawer = (props) => {
             ) : (
                <>
                   <DrawerItem
-                     label='Зареєструватися'
-                     onPress={() => props.navigation.navigate('Registration')}
-                     icon={() => <AntDesign name='adduser' size={22} color='#fff' />}
-                     labelStyle={{ color: '#fff', fontSize: 17 }}
-                  />
-                  <DrawerItem
                      label='Авторизизуватися'
                      onPress={() => props.navigation.navigate('Authorization')}
                      icon={() => <AntDesign name='user' size={22} color='#fff' />}
+                     labelStyle={{ color: '#fff', fontSize: 17 }}
+                  />
+                  <DrawerItem
+                     label='Зареєструватися'
+                     onPress={() => props.navigation.navigate('Registration')}
+                     icon={() => <AntDesign name='adduser' size={22} color='#fff' />}
                      labelStyle={{ color: '#fff', fontSize: 17 }}
                   />
                </>

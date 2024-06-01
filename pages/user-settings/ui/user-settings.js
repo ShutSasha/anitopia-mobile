@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Header } from '../../../widgets/header'
 import { Footer } from '../../../widgets/footer'
 import { styles } from './styles'
@@ -10,8 +10,12 @@ import { MainTitle } from '../../../widgets/main-title'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { ChooseGender } from '../../../widgets/choose-gender'
 import { CountrySelect } from '../../../entities/country-select'
+import axios from 'axios'
+import $api, { BASE_URL } from '../../../app/http'
+import { useNavigation } from '@react-navigation/native'
 
-export const Settings = () => {
+export const UserSettings = () => {
+   const navigation = useNavigation()
    const { store } = useStore()
 
    const [firstName, setFirstName] = useState(store.user.firstName)
@@ -19,7 +23,8 @@ export const Settings = () => {
    const [age, setAge] = useState(store.user.age.toString())
    const [sex, setSex] = useState(store.user.sex)
    const [country, setCountry] = useState(store.user.country)
-   const [about, setAbout] = useState(store.user.about)
+   const [about, setAbout] = useState(store.about)
+   const [error, setError] = useState(false)
 
    const handleFirstNameChange = (text) => {
       setFirstName(text)
@@ -38,6 +43,25 @@ export const Settings = () => {
    }
    const handleAboutChange = (text) => {
       setAbout(text)
+   }
+   const handleChangeData = async () => {
+      console.log(store)
+      try {
+         const { data } = await $api.put(`/api/users/${store.user.id}/personal-data`, {
+            firstName: firstName,
+            lastName: lastName,
+            country: country,
+            sex: sex,
+            age: age,
+            about: about,
+         })
+         store.setUser(data)
+         console.log(store)
+         store.setAbout(about)
+         navigation.navigate('Profile')
+      } catch (err) {
+         console.error(err)
+      }
    }
 
    return (
@@ -75,6 +99,7 @@ export const Settings = () => {
                   backgroundColour={'#FFFFFF'}
                   textColour={'#000000'}
                />
+               {error ? <Text style={styles.errorText}>{error}</Text> : null}
             </View>
             <View style={styles.inputWrapper}>
                <Text style={styles.title}>Стать:</Text>
@@ -86,7 +111,7 @@ export const Settings = () => {
             </View>
             <TextAreaInput inputName={'Про себе:'} userInput={about} handleInput={handleAboutChange} />
             <View style={styles.buttonWrapper}>
-               <TouchableOpacity style={styles.applyButton}>
+               <TouchableOpacity style={styles.applyButton} onPress={handleChangeData}>
                   <Text style={styles.applyButtonText}>Редагувати</Text>
                </TouchableOpacity>
             </View>

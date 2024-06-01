@@ -31,4 +31,11 @@ export const styles = StyleSheet.create({
       fontSize: 17,
       color: '#FFFFFF',
    },
+   errorText: {
+      fontSize: 15,
+      lineHeight: 15,
+      color: 'red',
+      paddingTop: 10,
+      paddingHorizontal: 20,
+   },
 })

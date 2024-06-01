@@ -4,11 +4,11 @@ import { styles } from './styles'
 import { Ionicons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
 
-export const UserPhotoAndNickname = ({ photo, nickname, userRoles }) => {
+export const UserPhotoAndNickname = ({ photo, nickname, userRoles, about }) => {
    const navigation = useNavigation()
 
    const handleSettings = (event) => {
-      navigation.navigate('Settings')
+      navigation.navigate('UserSettings')
    }
 
    return (

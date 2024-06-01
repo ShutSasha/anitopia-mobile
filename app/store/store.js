@@ -3,9 +3,11 @@ import { makeAutoObservable } from 'mobx'
 import axios from 'axios'
 import AuthService from '../services/AuthService'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useEffect } from 'react'
 
 export default class Store {
    user = {}
+   about = ''
    isAuth = false
    isLoading = false
    test = 'test'
@@ -23,6 +25,10 @@ export default class Store {
       this.user = user
    }
 
+   setAbout(about) {
+      this.about = about
+   }
+
    setLoading(bool) {
       this.isLoading = bool
    }
@@ -33,6 +39,8 @@ export default class Store {
          await AsyncStorage.setItem('token', response.data.accessToken)
          this.setAuth(true)
          this.setUser(response.data.user)
+         const { data } = await axios.get(`${BASE_URL}/api/users/${this.user.id}`)
+         this.setAbout(data.about)
          return true
       } catch (error) {
          console.error(error)

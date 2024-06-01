@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from '../../container'
 import { MainTitle } from '../../main-title'
 import { useStore } from '../../../hooks/useStore'
 import { BackgroundPhoto } from '../../../entities/background-photo'
 import { UserPhotoAndNickname } from '../../../entities/user-photo-and-nickname'
 import { UserInfo } from '../../../entities/user-info'
+import axios from 'axios'
+import { BASE_URL } from '../../../app/http'
+import { observer } from 'mobx-react-lite'
 
 const userDataTitles = ['Дата реєстрації', "Ім'я", 'Прізвище', 'Країна', 'Стать', 'Вік', 'Про себе']
 
-export const UserData = () => {
+export const UserData = observer(() => {
    const { store } = useStore()
-
-   const { username, roles, avatarLink, registrationDate, firstName, lastName, country, sex, age, about } = store.user
 
    const getValueOrDefault = (value) => {
       return value ? value : 'Не вказано'
@@ -26,13 +27,13 @@ export const UserData = () => {
    }
 
    const userData = {
-      'Дата реєстрації': formatDate(registrationDate),
-      "Ім'я": getValueOrDefault(firstName),
-      Прізвище: getValueOrDefault(lastName),
-      Країна: getValueOrDefault(country),
-      Стать: getValueOrDefault(sex),
-      Вік: getValueOrDefault(age),
-      'Про себе': getValueOrDefault(about),
+      'Дата реєстрації': store.user ? formatDate(store.user.registrationDate) : 'Не вказано',
+      "Ім'я": getValueOrDefault(store.user?.firstName),
+      Прізвище: getValueOrDefault(store.user?.lastName),
+      Країна: getValueOrDefault(store.user?.country),
+      Стать: getValueOrDefault(store.user?.sex),
+      Вік: getValueOrDefault(store.user?.age),
+      'Про себе': getValueOrDefault(store.about),
    }
 
    return (
@@ -40,13 +41,14 @@ export const UserData = () => {
          <MainTitle nameOfTheBlock={'Профіль'} topBorder={false} />
          <BackgroundPhoto backgroundPicture={require('../../../assets/animeCover.png')} />
          <UserPhotoAndNickname
-            nickname={getValueOrDefault(username)}
-            userRoles={roles}
-            photo={getValueOrDefault(avatarLink)}
+            nickname={getValueOrDefault(store.user.username)}
+            userRoles={store.user.roles}
+            about={store.about}
+            photo={getValueOrDefault(store.user.avatarLink)}
          />
          {userDataTitles.map((title) => (
             <UserInfo key={title} label={title} value={userData[title]} />
          ))}
       </Container>
    )
-}
+})
