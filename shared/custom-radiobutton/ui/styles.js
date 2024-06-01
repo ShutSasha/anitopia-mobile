@@ -18,9 +18,9 @@ export const styles = StyleSheet.create({
    },
 
    text: {
-      fontSize: 19,
+      fontSize: 17,
       fontFamily: 'Inter_400Regular',
-      lineHeight: 19,
+      lineHeight: 17,
       color: '#000000',
    },
 })

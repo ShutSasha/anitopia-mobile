@@ -3,9 +3,10 @@ import { StyleSheet } from 'react-native'
 export const styles = StyleSheet.create({
    wrapper: {
       flexDirection: 'row',
+      justifyContent: 'space-between',
       alignItems: 'center',
       marginBottom: 20,
-      marginLeft: 20,
+      paddingHorizontal: 20,
    },
    image: {
       width: 60,
@@ -42,7 +43,7 @@ export const styles = StyleSheet.create({
       marginRight: 10,
    },
    userRoleText: {
-      fontSize: 17,
+      fontSize: 15,
       color: '#FFFFFF',
    },
 })

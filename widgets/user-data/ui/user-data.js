@@ -6,12 +6,12 @@ import { BackgroundPhoto } from '../../../entities/background-photo'
 import { UserPhotoAndNickname } from '../../../entities/user-photo-and-nickname'
 import { UserInfo } from '../../../entities/user-info'
 
-const userDataTitles = ['Дата реєстрації', "Ім'я", 'Прізвище', 'Країна', 'Стать', 'Вік']
+const userDataTitles = ['Дата реєстрації', "Ім'я", 'Прізвище', 'Країна', 'Стать', 'Вік', 'Про себе']
 
 export const UserData = () => {
    const { store } = useStore()
 
-   const { username, roles, avatarLink, registrationDate, firstName, lastName, country, sex, age } = store.user
+   const { username, roles, avatarLink, registrationDate, firstName, lastName, country, sex, age, about } = store.user
 
    const getValueOrDefault = (value) => {
       return value ? value : 'Не вказано'
@@ -32,6 +32,7 @@ export const UserData = () => {
       Країна: getValueOrDefault(country),
       Стать: getValueOrDefault(sex),
       Вік: getValueOrDefault(age),
+      'Про себе': getValueOrDefault(about),
    }
 
    return (

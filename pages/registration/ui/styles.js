@@ -14,21 +14,34 @@ export const styles = StyleSheet.create({
 
    contentContainer: {
       alignItems: 'center',
-      padding: 16,
    },
 
    title: {
       fontSize: 48,
       color: '#FFFFFF',
       fontFamily: 'BalooTamma2_800ExtraBold',
-      marginBottom: 20,
       marginTop: 20,
+      marginBottom: 10,
    },
 
    nameOfPage: {
       fontSize: 24,
       color: '#FFFFFF',
       fontFamily: 'BalooTamma2_800ExtraBold',
-      marginBottom: 60,
+      marginBottom: 40,
+   },
+
+   inputContainer: {
+      marginBottom: 20,
+   },
+   inputContainerWithError: {
+      marginBottom: 5,
+   },
+   errorText: {
+      fontSize: 15,
+      lineHeight: 15,
+      color: 'red',
+      paddingTop: 10,
+      paddingHorizontal: 20,
    },
 })

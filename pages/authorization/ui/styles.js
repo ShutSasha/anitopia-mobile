@@ -16,15 +16,15 @@ export const styles = StyleSheet.create({
       fontSize: 48,
       color: '#FFFFFF',
       fontFamily: 'BalooTamma2_800ExtraBold',
-      marginBottom: 20,
       marginTop: 20,
+      marginBottom: 10,
    },
 
    nameOfPage: {
       fontSize: 24,
       color: '#FFFFFF',
       fontFamily: 'BalooTamma2_800ExtraBold',
-      marginBottom: 60,
+      marginBottom: 40,
    },
 
    registationText: {
@@ -34,5 +34,17 @@ export const styles = StyleSheet.create({
       fontFamily: 'BalooTamma2_800ExtraBold',
       marginBottom: 30,
       marginTop: 5,
+   },
+
+   inputContainer: {
+      marginBottom: 30,
+   },
+
+   errorText: {
+      fontSize: 15,
+      lineHeight: 15,
+      color: 'red',
+      paddingTop: 10,
+      paddingHorizontal: 20,
    },
 })

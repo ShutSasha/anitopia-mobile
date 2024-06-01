@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
-      paddingBottom: 30,
    },
 
    checkBoxSquare: {
@@ -16,5 +15,6 @@ export const styles = StyleSheet.create({
    textInput: {
       fontSize: 15,
       color: '#FFFFFF',
+      marginRight: 30,
    },
 })

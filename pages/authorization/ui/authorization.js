@@ -13,6 +13,7 @@ export const Authorization = () => {
    const { store } = useStore()
    const [userName, setUserName] = useState('')
    const [password, setPassword] = useState('')
+   const [errorMessage, setErrorMessage] = useState('')
 
    const handleUserName = (text) => {
       setUserName(text)
@@ -31,7 +32,17 @@ export const Authorization = () => {
                navigation.navigate('HomeStack')
             }
          })
-         .catch((err) => console.error(err))
+         .catch((err) => {
+            if (err.response && err.response.status === 400) {
+               setErrorMessage('*Неправильне ім’я користувача або пароль')
+            } else {
+               setErrorMessage('*Щось пішло не так. Спробуйте ще раз.')
+            }
+         })
+   }
+
+   const handleChangePage = () => {
+      navigation.navigate('Registration')
    }
 
    return (
@@ -39,9 +50,28 @@ export const Authorization = () => {
          <View style={styles.container}>
             <Text style={styles.title}>Anitopia</Text>
             <Text style={styles.nameOfPage}>Авторизація</Text>
-            <UserTextInput typeOfInput={'userName'} userInput={userName} handleInput={handleUserName} />
-            <UserTextInput typeOfInput={'password'} userInput={password} handleInput={handlePassword} />
-            <TouchableOpacity activeOpacity={0.6}>
+            <View style={styles.inputContainer}>
+               <UserTextInput
+                  typeOfInput={'userName'}
+                  userInput={userName}
+                  handleInput={handleUserName}
+                  backgroundColour={'#FF6666'}
+                  textColour={'#FFFFFF'}
+                  inputTitle={"Ім'я користувача:"}
+               />
+            </View>
+            <View style={styles.inputContainer}>
+               <UserTextInput
+                  typeOfInput={'password'}
+                  userInput={password}
+                  handleInput={handlePassword}
+                  backgroundColour={'#FF6666'}
+                  textColour={'#FFFFFF'}
+                  inputTitle={'Пароль:'}
+               />
+            </View>
+            {errorMessage ? <Text style={styles.errorText}>{errorMessage}</Text> : null}
+            <TouchableOpacity activeOpacity={0.6} onPress={handleChangePage}>
                <Text style={styles.registationText}>Зареєструватися</Text>
             </TouchableOpacity>
             <ButtonWithText onPress={handleLogin} text={'Увійти'} />

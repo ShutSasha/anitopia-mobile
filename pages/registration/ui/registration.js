@@ -57,30 +57,30 @@ export const Registration = () => {
       let isValid = true
 
       if (userName === '') {
-         setUserNameError('User name is required')
+         setUserNameError('*Потрібно вказати ім’я користувача')
          isValid = false
       }
 
       if (password === '') {
-         setPasswordError('Password is required')
+         setPasswordError('*Необхідно ввести пароль')
          isValid = false
       }
 
       if (verifyPassword !== password) {
-         setVerifyPasswordError('Passwords do not match!')
+         setVerifyPasswordError('*Паролі не збігаються!')
          isValid = false
       }
 
       if (email === '') {
-         setEmailError('Email is required')
+         setEmailError('*Необхідно вказати електронну пошту')
          isValid = false
       } else if (!validateEmail(email)) {
-         setEmailError('Invalid email format')
+         setEmailError('*Недійсний формат електронної пошти')
          isValid = false
       }
 
       if (!isUserAgree) {
-         setAgreementError('You must agree to the user agreement')
+         setAgreementError('*Ви повинні погодитися з угодою користувача')
          isValid = false
       }
 
@@ -108,20 +108,54 @@ export const Registration = () => {
          >
             <Text style={styles.title}>Anitopia</Text>
             <Text style={styles.nameOfPage}>Реєстрація</Text>
-            <UserTextInput typeOfInput={'userName'} userInput={userName} handleInput={handleUserName} />
-            {userNameError ? <Text style={styles.errorText}>{userNameError}</Text> : null}
-            <UserTextInput typeOfInput={'email'} userInput={email} handleInput={handleEmail} />
-            {emailError ? <Text style={styles.errorText}>{emailError}</Text> : null}
-            <UserTextInput typeOfInput={'password'} userInput={password} handleInput={handlePassword} />
-            {passwordError ? <Text style={styles.errorText}>{passwordError}</Text> : null}
-            <UserTextInput
-               typeOfInput={'verifyPassword'}
-               userInput={verifyPassword}
-               handleInput={handleVerifyPassword}
-            />
-            {verifyPasswordError ? <Text style={styles.errorText}>{verifyPasswordError}</Text> : null}
-            <CheckboxInput checkBoxInput={isUserAgree} handleCheckBox={handleCheckBox} />
-            {agreementError ? <Text style={styles.errorText}>{agreementError}</Text> : null}
+            <View style={userNameError ? styles.inputContainerWithError : styles.inputContainer}>
+               <UserTextInput
+                  typeOfInput={'userName'}
+                  userInput={userName}
+                  handleInput={handleUserName}
+                  backgroundColour={'#FF6666'}
+                  textColour={'#FFFFFF'}
+                  inputTitle={"Ім'я користувача:"}
+               />
+               {userNameError ? <Text style={styles.errorText}>{userNameError}</Text> : null}
+            </View>
+            <View style={emailError ? styles.inputContainerWithError : styles.inputContainer}>
+               <UserTextInput
+                  typeOfInput={'email'}
+                  userInput={email}
+                  handleInput={handleEmail}
+                  backgroundColour={'#FF6666'}
+                  textColour={'#FFFFFF'}
+                  inputTitle={'Електронна пошта:'}
+               />
+               {emailError ? <Text style={styles.errorText}>{emailError}</Text> : null}
+            </View>
+            <View style={passwordError ? styles.inputContainerWithError : styles.inputContainer}>
+               <UserTextInput
+                  typeOfInput={'password'}
+                  userInput={password}
+                  handleInput={handlePassword}
+                  backgroundColour={'#FF6666'}
+                  textColour={'#FFFFFF'}
+                  inputTitle={'Пароль:'}
+               />
+               {passwordError ? <Text style={styles.errorText}>{passwordError}</Text> : null}
+            </View>
+            <View style={verifyPasswordError ? styles.inputContainerWithError : styles.inputContainer}>
+               <UserTextInput
+                  typeOfInput={'verifyPassword'}
+                  userInput={verifyPassword}
+                  handleInput={handleVerifyPassword}
+                  backgroundColour={'#FF6666'}
+                  textColour={'#FFFFFF'}
+                  inputTitle={'Підтвердження паролю:'}
+               />
+               {verifyPasswordError ? <Text style={styles.errorText}>{verifyPasswordError}</Text> : null}
+            </View>
+            <View style={verifyPasswordError ? styles.inputContainerWithError : styles.inputContainer}>
+               <CheckboxInput checkBoxInput={isUserAgree} handleCheckBox={handleCheckBox} />
+               {agreementError ? <Text style={styles.errorText}>{agreementError}</Text> : null}
+            </View>
             <ButtonWithText text={'Зареєструватися'} onPress={handleSubmit} />
             <ButtonWithImage />
          </KeyboardAwareScrollView>

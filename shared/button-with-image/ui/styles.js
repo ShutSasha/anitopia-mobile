@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: '#555765',
       marginHorizontal: 20,
-      marginBottom: 30,
+      marginBottom: 20,
    },
 
    image: {

@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import { styles } from './styles'
 import { TextInput } from 'react-native-paper'
 
 const typesOfInput = ['userName', 'password', 'verifyPassword', 'email']
-
 const placeholders = ["Введіть ім'я користувача:", 'Введіть пароль:', 'Підтвердіть пароль:', 'Введіть пошту:']
 
-export const UserTextInput = ({ typeOfInput, userInput, handleInput }) => {
+export const UserTextInput = ({ typeOfInput, userInput, handleInput, backgroundColour, textColour, inputTitle }) => {
    const [placeHolder, setPlaceHolder] = useState('')
-   const [error, setError] = useState('')
 
    useEffect(() => {
       switch (typeOfInput) {
@@ -33,16 +31,17 @@ export const UserTextInput = ({ typeOfInput, userInput, handleInput }) => {
    return (
       <View>
          <View style={styles.inputWrapper}>
+            <Text style={[styles.inputName, { color: textColour }]}>{inputTitle}</Text>
             <TextInput
                disabled={false}
                placeholder={placeHolder}
                value={userInput}
                onChangeText={handleInput}
-               style={styles.textInput}
+               style={[styles.textInput, { backgroundColor: backgroundColour }]}
                mode='outlined'
                placeholderTextColor='#FFFFFF'
                activeOutlineColor='#555765'
-               textColor='#FFFFFF'
+               textColor={textColour}
                secureTextEntry={typeOfInput === 'password' || typeOfInput === 'verifyPassword'}
             />
          </View>
