@@ -1,16 +1,14 @@
+import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 import { TabsNavigator } from '../../tab-navigator'
 import { RandomAnime } from '../../../../pages/random-anime'
 import { Top100Anime } from '../../../../pages/top-100-anime'
-import { createDrawerNavigator } from '@react-navigation/drawer'
 import { AnimePage } from '../../../../pages/anime-page'
-import React from 'react'
 import { CustomDrawer } from '../../custom-navigator/'
 import { Authorization } from '../../../../pages/authorization'
 import { Registration } from '../../../../pages/registration'
-import { Profile } from '../../../../pages/profile'
 import { ProfileStack } from '../../profile-stack'
-import { useStore } from '../../../../hooks/useStore'
 
 const Drawer = createDrawerNavigator()
 

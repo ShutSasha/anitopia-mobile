@@ -1,6 +1,4 @@
-import axios from 'axios'
-import { BASE_URL } from '../app/http'
-import { useStore } from './useStore'
+import $api from '../app/http'
 
 export const fetchAnimeList = async (
    numberOfPage,
@@ -17,7 +15,7 @@ export const fetchAnimeList = async (
    episodes_end,
 ) => {
    try {
-      const { data } = await axios.get(`${BASE_URL}/api/anime/list`, {
+      const { data } = await $api.get(`/api/anime/list`, {
          params: {
             page: numberOfPage,
             limit: numberOfAnimes,

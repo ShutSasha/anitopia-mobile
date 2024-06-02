@@ -3,8 +3,7 @@ import { Image, Text, TouchableOpacity, View } from 'react-native'
 import { styles } from './styles'
 import { AntDesign } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
-import axios from 'axios'
-import { BASE_URL } from '../../../app/http'
+import $api from '../../../app/http'
 
 export const RatedAnimeCard = ({ ratedAnime, userRating, index, count }) => {
    const { animeId } = ratedAnime
@@ -14,7 +13,7 @@ export const RatedAnimeCard = ({ ratedAnime, userRating, index, count }) => {
    useEffect(() => {
       const findAnimeById = async () => {
          try {
-            const { data } = await axios.get(`${BASE_URL}/api/anime/${animeId}`)
+            const { data } = await $api.get(`/api/anime/${animeId}`)
             setAnime(data)
          } catch (e) {
             console.log(e)

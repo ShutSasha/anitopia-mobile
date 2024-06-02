@@ -5,8 +5,6 @@ import { useStore } from '../../../hooks/useStore'
 import { BackgroundPhoto } from '../../../entities/background-photo'
 import { UserPhotoAndNickname } from '../../../entities/user-photo-and-nickname'
 import { UserInfo } from '../../../entities/user-info'
-import axios from 'axios'
-import { BASE_URL } from '../../../app/http'
 import { observer } from 'mobx-react-lite'
 
 const userDataTitles = ['Дата реєстрації', "Ім'я", 'Прізвище', 'Країна', 'Стать', 'Вік', 'Про себе']

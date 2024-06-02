@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { BASE_URL } from '../app/http'
+import $api from '../app/http'
 import { transformResponseToAnime } from '../shared/lib/anime/transform-anime-info-response'
 
 export const useFetchAnimeID = (animeID) => {
@@ -9,7 +9,7 @@ export const useFetchAnimeID = (animeID) => {
    useEffect(() => {
       const fetchAnimeByID = async () => {
          try {
-            const response = await axios.get(`${BASE_URL}/api/anime/${animeID}`)
+            const response = await $api.get(`/api/anime/${animeID}`)
             const transformedData = transformResponseToAnime(response)
             setAnimeInfo(transformedData)
          } catch (error) {

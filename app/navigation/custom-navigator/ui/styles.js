@@ -6,8 +6,8 @@ export const styles = StyleSheet.create({
       width: 60,
       marginBottom: 10,
       marginTop: 10,
-      marginRight: 20,
-      marginLeft: 20,
+      marginRight: 15,
+      marginLeft: 15,
    },
    switchTextContainer: {
       flexDirection: 'row',

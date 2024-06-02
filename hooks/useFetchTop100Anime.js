@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { BASE_URL } from '../app/http'
+import $api from '../app/http'
 
 export const useFetchTop100Anime = () => {
    const [topAnime, setTopAnime] = useState([])
    useEffect(() => {
       const fetchTopAnime = async () => {
          try {
-            const { data } = await axios.get(`${BASE_URL}/api/anime/top`)
+            const { data } = await $api.get(`/api/anime/top`)
             setTopAnime(data)
          } catch (error) {
             console.log(error)

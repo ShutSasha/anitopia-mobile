@@ -1,10 +1,10 @@
-import { View, Text, ImageBackground, Image, TouchableOpacity, StyleSheet, Switch, SafeAreaView } from 'react-native'
-import { DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer'
+import React from 'react'
+import { View, Text, Image, SafeAreaView, Platform, StatusBar } from 'react-native'
+import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer'
 import RandomIcon from '../../../../assets/random-icon.svg'
 import Top100Icon from '../../../../assets/top-100-icon.svg'
 import { styles } from './styles'
 import { Ionicons } from '@expo/vector-icons'
-import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 import { EvilIcons } from '@expo/vector-icons'
 import { useStore } from '../../../../hooks/useStore'
@@ -36,7 +36,13 @@ export const CustomDrawer = (props) => {
             }}
          >
             {store?.user && store?.isAuth ? (
-               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+               <View
+                  style={{
+                     flexDirection: 'row',
+                     alignItems: 'center',
+                     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+                  }}
+               >
                   <Image alt='Не знайдено' source={{ uri: store.user.avatarLink }} style={styles.userAvatar} />
                   <Text
                      style={{
@@ -49,7 +55,7 @@ export const CustomDrawer = (props) => {
                   </Text>
                </View>
             ) : null}
-            <View style={{ flex: 1, paddingTop: 10 }}>
+            <View style={{ flex: 1, paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 10 }}>
                <DrawerItem
                   label='Топ-100 аніме'
                   onPress={() => props.navigation.navigate('Top100Anime')}
@@ -58,7 +64,9 @@ export const CustomDrawer = (props) => {
                />
                <DrawerItem
                   label='Рандомне аніме'
-                  onPress={() => props.navigation.navigate('RandomAnime')}
+                  onPress={() => {
+                     navigation.navigate('RandomAnime', { key: Math.random() })
+                  }}
                   icon={() => <RandomIcon width={22} height={22} fill='#fff' />}
                   labelStyle={{ color: '#fff', fontSize: 17 }}
                />

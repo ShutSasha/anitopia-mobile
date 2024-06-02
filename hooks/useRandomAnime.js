@@ -1,22 +1,27 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { BASE_URL } from '../app/http'
+import { useEffect, useState, useCallback } from 'react'
+import $api from '../app/http'
 
 export const useFetchRandomAnime = () => {
-   const [randomAnime, setRandomAnime] = useState([])
+   const [randomAnime, setRandomAnime] = useState(null)
+   const [error, setError] = useState(null)
+   const [loading, setLoading] = useState(false)
 
-   useEffect(() => {
-      const fetchRandomAnime = async () => {
-         try {
-            const { data } = await axios.get(`${BASE_URL}/api/anime/random`)
-            setRandomAnime(data)
-         } catch (error) {
-            console.log(error)
-         }
+   const fetchRandomAnime = useCallback(async () => {
+      setLoading(true)
+      setError(null)
+      try {
+         const { data } = await $api.get(`/api/anime/random`)
+         setRandomAnime(data)
+      } catch (error) {
+         setError(error)
+      } finally {
+         setLoading(false)
       }
-
-      fetchRandomAnime()
    }, [])
 
-   return randomAnime
+   useEffect(() => {
+      fetchRandomAnime()
+   }, [fetchRandomAnime])
+
+   return { randomAnime, fetchRandomAnime, loading, error }
 }
