@@ -3,7 +3,7 @@ import { makeAutoObservable } from 'mobx'
 import axios from 'axios'
 import AuthService from '../services/AuthService'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { useEffect } from 'react'
+import AnimeCatalogStore from './anime-catalog-store'
 
 export default class Store {
    user = {}
@@ -11,9 +11,10 @@ export default class Store {
    isAuth = false
    isLoading = false
    test = 'test'
-
+   animeCatalogStore
    constructor() {
       makeAutoObservable(this)
+      this.animeCatalogStore = new AnimeCatalogStore()
       this.setLoading = this.setLoading.bind(this)
    }
 

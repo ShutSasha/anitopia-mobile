@@ -1,33 +1,31 @@
-import React, { useState } from 'react'
-import { View, Text, Image, TouchableOpacity, SafeAreaView } from 'react-native'
-import { styles } from './styles'
+import React, { useEffect, useState } from 'react'
+import { View, Text } from 'react-native'
 import MultiSelect from 'react-native-multiple-select'
+import { styles } from './styles'
 
-export const MultipleSelect = ({ data }) => {
-   const [selectedItems, setSelectedItems] = useState([])
+export const MultipleSelect = ({ data, header, inputHeader, selectedData, handleChange }) => {
+   const [selectedItems, setSelectedItems] = useState(selectedData)
+
+   useEffect(() => {
+      setSelectedItems(selectedData)
+   }, [selectedData])
 
    const onSelectedItemsChange = (selectedItems) => {
       setSelectedItems(selectedItems)
-   }
-   const fontsize = 17
-
-   const handleSelectedItemsChange = (items) => {
-      // Выполняем проверку на допустимость выбранных элементов перед их установкой
-      const validSelectedItems = items.filter((selectedItem) => data.items.some((item) => item.id === selectedItem))
-      setSelectedItems(validSelectedItems)
+      handleChange(selectedItems)
    }
 
    return (
       <View>
-         <Text style={styles.header}>{data.header}</Text>
+         <Text style={styles.header}>{header}</Text>
          <MultiSelect
-            items={data.items}
+            items={data.map((item, index) => ({ id: index.toString(), name: item }))}
             uniqueKey='id'
-            onSelectedItemsChange={handleSelectedItemsChange}
+            onSelectedItemsChange={onSelectedItemsChange}
             selectedItems={selectedItems}
-            fontSize={fontsize}
-            itemFontSize={fontsize}
-            selectText={data.inputHeader}
+            fontSize={17}
+            itemFontSize={17}
+            selectText={inputHeader}
             searchInputPlaceholderText='Шукати...'
             onChangeInput={(text) => console.log(text)}
             altFontFamily='ProximaNova-Light'

@@ -3,14 +3,24 @@ import { View, Text, Modal, TouchableOpacity, Image } from 'react-native'
 import { styles } from './styles'
 import { AntDesign } from '@expo/vector-icons'
 import { CustomRadiobutton } from '../../../shared/custom-radiobutton'
+import { useStore } from '../../../hooks/useStore'
+
+const sortOptions = ['Кількістю оцінок', 'Кількістю епізодів', 'Роком', 'Не сортувати']
+const sortOrderOptions = ['asc', 'desc']
 
 export const SortOptions = ({ visible, handleSortModal }) => {
-   const sortOptions = ['Рейтингом', 'Кількістю оцінок', 'Роком', 'Датою випуску']
-   const sortOrderOptions = ['За зростанням', 'За спаданням']
+   const { store } = useStore()
 
-   const [checkedSortOption, setCheckedSortOption] = useState(sortOptions[0])
-   const [checkedSortOrder, setCheckedSortOrder] = useState(sortOrderOptions[0])
-
+   const [sortOption, setSortOption] = useState(store.animeCatalogStore.sortType)
+   const [sortOrder, setSortOrder] = useState(store.animeCatalogStore.sortBy)
+   const handleSortOptionChange = (sortOption) => {
+      setSortOption(sortOption)
+      store.animeCatalogStore.setSortType(sortOption)
+   }
+   const handleSortOrderChange = (sortOrder) => {
+      setSortOrder(sortOrder)
+      store.animeCatalogStore.setSortBy(sortOrder)
+   }
    return (
       <Modal visible={visible} transparent={true} style={styles.container}>
          <View style={styles.modalContainer}>
@@ -24,8 +34,8 @@ export const SortOptions = ({ visible, handleSortModal }) => {
                {sortOptions.map((singleOption) => (
                   <CustomRadiobutton
                      key={singleOption}
-                     selectedOption={checkedSortOption}
-                     setSelectedOption={setCheckedSortOption}
+                     selectedOption={sortOption}
+                     setSelectedOption={handleSortOptionChange}
                   >
                      {singleOption}
                   </CustomRadiobutton>
@@ -34,8 +44,8 @@ export const SortOptions = ({ visible, handleSortModal }) => {
                {sortOrderOptions.map((singleOption) => (
                   <CustomRadiobutton
                      key={singleOption}
-                     selectedOption={checkedSortOrder}
-                     setSelectedOption={setCheckedSortOrder}
+                     selectedOption={sortOrder}
+                     setSelectedOption={handleSortOrderChange}
                   >
                      {singleOption}
                   </CustomRadiobutton>
