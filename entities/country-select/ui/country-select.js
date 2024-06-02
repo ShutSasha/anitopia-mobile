@@ -431,40 +431,41 @@ const countries = [
 export const CountrySelect = ({ country, handleCountryChange }) => {
    const [selectedCountry, setSelectedCountry] = useState(country ? countries.find((c) => c.label === country) : null)
 
-   useEffect(() => {
-      const foundCountry = countries.find((c) => c.label === country)
-      setSelectedCountry(foundCountry || null)
-   }, [country])
-
    const onValueChange = (value) => {
-      if (value != null) {
-         handleCountryChange(value.label)
-         setSelectedCountry(value)
+      if (value) {
+         handleCountryChange(value)
+         setSelectedCountry(countries.find((c) => c.label === value))
+         console.log(value)
       } else {
          handleCountryChange('')
          setSelectedCountry(null)
       }
    }
 
+   useEffect(() => {
+      if (country) {
+         const selected = countries.find((c) => c.label === country)
+         if (selected) {
+            setSelectedCountry(selected)
+         }
+      }
+   }, [country])
+
    return (
       <View style={styles.wrapper}>
          <Dropdown
             placeholder='Оберіть країну...'
             optionLabel='label'
-            optionValue='code'
+            optionValue='label'
             options={countries}
-            selectedValue={selectedCountry}
+            selectedValue={selectedCountry ? selectedCountry.label : null}
             onValueChange={onValueChange}
             isSearchable
             closeAfterSelect
             autoOpen
-            primaryColor={'#FF6666'}
-            dropdownStyle={{
-               borderWidth: 1,
-            }}
-            placeholderStyle={{
-               fontSize: 17,
-            }}
+            primaryColor='#FF6666'
+            dropdownStyle={{ borderWidth: 1 }}
+            placeholderStyle={{ fontSize: 17 }}
          />
       </View>
    )

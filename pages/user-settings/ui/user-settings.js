@@ -10,8 +10,7 @@ import { MainTitle } from '../../../widgets/main-title'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { ChooseGender } from '../../../widgets/choose-gender'
 import { CountrySelect } from '../../../entities/country-select'
-import axios from 'axios'
-import $api, { BASE_URL } from '../../../app/http'
+import $api from '../../../app/http'
 import { useNavigation } from '@react-navigation/native'
 
 export const UserSettings = () => {
@@ -55,7 +54,7 @@ export const UserSettings = () => {
             age: age,
             about: about,
          })
-         store.setUser(data)
+         store.setUser({ id: data._id, ...data })
          console.log(store)
          store.setAbout(about)
          navigation.navigate('Profile')
