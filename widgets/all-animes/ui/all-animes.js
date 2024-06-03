@@ -12,6 +12,9 @@ export const AllAnimes = ({}) => {
    const [animes, setAnimes] = useState([])
    const [currentPage, setCurrentPage] = useState(1)
    const [query, setQuery] = useState('')
+   const {
+      animeCatalogStore: { sortType, sortBy, genres, kinds, mpaa, year_start, year_end, episodes_start, episodes_end },
+   } = store
 
    const fetchMore = async () => {
       try {
@@ -38,7 +41,7 @@ export const AllAnimes = ({}) => {
 
    useEffect(() => {
       fetchMore()
-   }, [store.animeCatalogStore.sortBy])
+   }, [sortType, sortBy, genres, kinds, mpaa, year_start, year_end, episodes_start, episodes_end])
 
    const navigation = useNavigation()
 
@@ -57,7 +60,7 @@ export const AllAnimes = ({}) => {
             keyExtractor={(item) => item._id.toString()}
             onEndReached={fetchMore}
             bounces={true}
-            overScrollMode='never'
+            overScrollMode="never"
          />
       </View>
    )
