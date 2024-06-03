@@ -92,7 +92,7 @@ export const Registration = () => {
          .registration(userName, password, email, null)
          .then((isLoggedIn) => {
             if (isLoggedIn) {
-               navigation.navigate('HomeStack')
+               navigation.navigate('VerifyAccount')
             }
          })
          .catch((err) => console.error(err))

@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
       flexDirection: 'row',
       marginLeft: 20,
       marginBottom: 20,
-      alignItems: 'center',
+      alignItems: 'flex-start',
    },
    label: {
       fontWeight: 'bold',
@@ -13,6 +13,8 @@ export const styles = StyleSheet.create({
       marginRight: 5,
    },
    value: {
+      flexWrap: 'wrap',
+      width: '75%',
       fontSize: 18,
    },
 })

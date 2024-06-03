@@ -7,8 +7,8 @@ import { Top100Anime } from '../../../../pages/top-100-anime'
 import { AnimePage } from '../../../../pages/anime-page'
 import { CustomDrawer } from '../../custom-navigator/'
 import { Authorization } from '../../../../pages/authorization'
-import { Registration } from '../../../../pages/registration'
 import { ProfileStack } from '../../profile-stack'
+import { RegistrationStack } from '../../registration-stack'
 
 const Drawer = createDrawerNavigator()
 
@@ -56,19 +56,19 @@ export const AppNavigator = () => {
                }}
             />
             <Drawer.Screen
-               name='Registration'
-               component={Registration}
+               name='Authorization'
+               component={Authorization}
                options={{
                   drawerPosition: 'right',
                   title: 'Реєстрація',
                }}
             />
             <Drawer.Screen
-               name='Authorization'
-               component={Authorization}
+               name='RegistrationStack'
+               component={RegistrationStack}
                options={{
                   drawerPosition: 'right',
-                  title: 'Авторизація',
+                  title: 'Реєстрація',
                }}
             />
             <Drawer.Screen
@@ -76,7 +76,7 @@ export const AppNavigator = () => {
                component={ProfileStack}
                options={{
                   drawerPosition: 'right',
-                  title: 'Авторизація',
+                  title: 'Профіль',
                }}
             />
          </Drawer.Navigator>

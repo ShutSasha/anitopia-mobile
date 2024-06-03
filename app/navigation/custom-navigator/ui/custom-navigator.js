@@ -98,7 +98,7 @@ export const CustomDrawer = (props) => {
                   />
                   <DrawerItem
                      label='Зареєструватися'
-                     onPress={() => props.navigation.navigate('Registration')}
+                     onPress={() => props.navigation.navigate('RegistrationStack')}
                      icon={() => <AntDesign name='adduser' size={22} color='#fff' />}
                      labelStyle={{ color: '#fff', fontSize: 17 }}
                   />

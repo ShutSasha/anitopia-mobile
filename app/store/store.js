@@ -53,9 +53,9 @@ export default class Store {
       try {
          const response = await AuthService.registration(username, password, email, pictureLink)
 
-         await AsyncStorage.setItem('token', response.data.accessToken)
+         /*await AsyncStorage.setItem('token', response.data.accessToken)
          this.setAuth(true)
-         this.setUser(response.data.user)
+         this.setUser(response.data.user)*/
          return true
       } catch (error) {
          console.error(error)
@@ -69,6 +69,8 @@ export default class Store {
          await AsyncStorage.removeItem('token')
          this.setAuth(false)
          this.setUser({})
+         this.setAbout('')
+         this.animeCatalogStore = null
       } catch (error) {
          console.error(error)
       }

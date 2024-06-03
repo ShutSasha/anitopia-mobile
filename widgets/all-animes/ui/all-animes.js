@@ -47,16 +47,18 @@ export const AllAnimes = ({}) => {
    }
 
    return (
-      <FlatList
-         numColumns={3}
-         showsVerticalScrollIndicator={false}
-         initialNumToRender={animes.length}
-         data={animes}
-         renderItem={({ item }) => <AnimeCard animeItem={item} onPress={() => handlePressAnime(item)} />}
-         keyExtractor={(item) => item._id.toString()}
-         onEndReached={fetchMore}
-         bounces={true}
-         overScrollMode='never'
-      />
+      <View style={styles.theWholePage}>
+         <FlatList
+            numColumns={3}
+            showsVerticalScrollIndicator={false}
+            initialNumToRender={animes.length}
+            data={animes}
+            renderItem={({ item }) => <AnimeCard animeItem={item} onPress={() => handlePressAnime(item)} />}
+            keyExtractor={(item) => item._id.toString()}
+            onEndReached={fetchMore}
+            bounces={true}
+            overScrollMode='never'
+         />
+      </View>
    )
 }
