@@ -7,7 +7,7 @@ import { getAnimeInfoProperties } from '../const/anime-info-properties'
 
 export const AnimeInfo = ({ animeInfo }) => {
    const [animeInfoData, setAnimeInfo] = useState([])
-
+   const imagePath = `https://shikimori.one/system/animes/original/${animeInfo.shikimori_id}.jpg`
    useEffect(() => {
       const animeInfoResponse = getAnimeInfoProperties(animeInfo)
       setAnimeInfo(animeInfoResponse)
@@ -19,7 +19,7 @@ export const AnimeInfo = ({ animeInfo }) => {
             <Text style={styles.title}>{animeInfo.title || 'Назва невідома'}</Text>
          </View>
          <View style={styles.contentContainer}>
-            <Image source={{ uri: animeInfo.posterURL || 'default_poster_uri' }} style={styles.poster} />
+            <Image source={{ uri: imagePath || 'default_poster_uri' }} style={styles.poster} />
             <View style={styles.infoContainer}>
                <Ratings material_data={animeInfo.material_data} />
                {animeInfoData &&

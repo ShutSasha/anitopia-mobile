@@ -19,7 +19,7 @@ export const MultipleSelect = ({ data, header, inputHeader, selectedData, handle
       <View>
          <Text style={styles.header}>{header}</Text>
          <MultiSelect
-            items={data.map((item, index) => ({ id: index.toString(), name: item }))}
+            items={data.map(item => ({ id: item.value, name: item.label }))}
             uniqueKey='id'
             onSelectedItemsChange={onSelectedItemsChange}
             selectedItems={selectedItems}

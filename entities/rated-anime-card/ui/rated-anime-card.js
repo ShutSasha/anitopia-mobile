@@ -9,7 +9,7 @@ export const RatedAnimeCard = ({ ratedAnime, userRating, index, count }) => {
    const { animeId } = ratedAnime
    const [anime, setAnime] = useState()
    const navigation = useNavigation()
-
+   const imagePath = `https://shikimori.one/system/animes/original/${ratedAnime.shikimori_id}.jpg`
    useEffect(() => {
       const findAnimeById = async () => {
          try {
@@ -38,7 +38,7 @@ export const RatedAnimeCard = ({ ratedAnime, userRating, index, count }) => {
          onPress={handleCardPress}
       >
          <View style={styles.animeCoverAndName}>
-            <Image style={styles.animeCover} source={{ uri: ratedAnime.poster_url }} />
+            <Image style={styles.animeCover} source={{ uri: imagePath }} />
             <Text style={styles.animeName}>{ratedAnime.title}</Text>
          </View>
          <View style={styles.ratingsWrapper}>

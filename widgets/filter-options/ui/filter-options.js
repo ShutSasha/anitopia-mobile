@@ -1,43 +1,44 @@
-import * as React from 'react'
-import { Modal, View, Text, TouchableOpacity, Platform } from 'react-native'
-import { styles } from './styles'
-import { MultipleSelect } from '../../../entities/multi-select'
-import { ValueRange } from '../../../entities/value-range'
-import { KeyboardAwareFlatList, KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { useStore } from '../../../hooks/useStore'
-import { GENRES } from '../../../consts/genres'
-import { KINDS } from '../../../consts/kinds'
-import { MPAA } from '../../../consts/mpaa'
+import React from 'react';
+import { Modal, View, Text, TouchableOpacity } from 'react-native';
+import { styles } from './styles';
+import { MultipleSelect } from '../../../entities/multi-select';
+import { ValueRange } from '../../../entities/value-range';
+import { KeyboardAwareFlatList } from 'react-native-keyboard-aware-scroll-view';
+import { useStore } from '../../../hooks/useStore';
+import { GENRES } from '../../../consts/genres';
+import { KINDS } from '../../../consts/kinds';
+import { MPAA } from '../../../consts/mpaa';
 
 export const FilterOptions = ({ visible, handleFilterModal }) => {
-   const { store } = useStore()
+   const { store } = useStore();
+
    const handleChangeGenre = (values) => {
-      store.animeCatalogStore.setGenres(values)
-   }
+      store.animeCatalogStore.setGenres(values);
+   };
 
    const handleChangeKind = (values) => {
-      store.animeCatalogStore.setKind(values)
-   }
+      store.animeCatalogStore.setKind(values);
+   };
 
    const handleChangeMPAA = (values) => {
-      store.animeCatalogStore.setMPAA(values)
-   }
+      store.animeCatalogStore.setMPAA(values);
+   };
 
    const handleChangeYearStart = (value) => {
-      store.animeCatalogStore.setYearStart(value)
-   }
+      store.animeCatalogStore.setYearStart(value);
+   };
 
    const handleChangeYearEnd = (value) => {
-      store.animeCatalogStore.setYearEnd(value)
-   }
+      store.animeCatalogStore.setYearEnd(value);
+   };
 
    const handleChangeEpisodesStart = (value) => {
-      store.animeCatalogStore.setEpisodesStart(value)
-   }
+      store.animeCatalogStore.setEpisodesStart(value);
+   };
 
    const handleChangeEpisodesEnd = (value) => {
-      store.animeCatalogStore.setEpisodesEnd(value)
-   }
+      store.animeCatalogStore.setEpisodesEnd(value);
+   };
 
    const combinedData = [
       {
@@ -82,7 +83,7 @@ export const FilterOptions = ({ visible, handleFilterModal }) => {
          handleChangeFrom: handleChangeEpisodesStart,
          handleChangeTo: handleChangeEpisodesEnd,
       },
-   ]
+   ];
 
    return (
       <Modal visible={visible} transparent={true}>
@@ -100,7 +101,7 @@ export const FilterOptions = ({ visible, handleFilterModal }) => {
                               selectedData={item.selectedData}
                               handleChange={item.handleChange}
                            />
-                        )
+                        );
                      } else if (item.type === 'valueRange') {
                         return (
                            <ValueRange
@@ -111,11 +112,10 @@ export const FilterOptions = ({ visible, handleFilterModal }) => {
                               handleChangeFrom={item.handleChangeFrom}
                               handleChangeTo={item.handleChangeTo}
                            />
-                        )
+                        );
                      }
-                     return null
+                     return null;
                   }}
-                  keyboardOpeningTime={0.25}
                   keyExtractor={(item, index) => index.toString()}
                   extraScrollHeight={20}
                   enableAutomaticScroll={true}
@@ -132,5 +132,5 @@ export const FilterOptions = ({ visible, handleFilterModal }) => {
             </View>
          </View>
       </Modal>
-   )
-}
+   );
+};
