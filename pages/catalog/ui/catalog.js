@@ -7,11 +7,11 @@ import { SortAndFilter } from '../../../widgets/sort-and-filter'
 import { SortOptions } from '../../../widgets/sort-options'
 import { useState } from 'react'
 import { FilterOptions } from '../../../widgets/filter-options'
-import { useStore } from '../../../hooks/useStore'
 
 export const Catalog = () => {
    const [sortModal, setSortModal] = useState(false)
    const [filterModal, setFilterModal] = useState(false)
+
    const handleSortModal = () => {
       setSortModal(!sortModal)
    }

@@ -6,8 +6,9 @@ import { fetchAnimeList } from '../../../hooks/useFetchAnimeList'
 import { useState, useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { useStore } from '../../../hooks/useStore'
+import { observer } from 'mobx-react-lite'
 
-export const AllAnimes = ({}) => {
+export const AllAnimes = observer(({}) => {
    const { store } = useStore()
    const [animes, setAnimes] = useState([])
    const [currentPage, setCurrentPage] = useState(1)
@@ -19,8 +20,8 @@ export const AllAnimes = ({}) => {
    const fetchMore = async () => {
       try {
          const { data } = await fetchAnimeList(
-            currentPage,
-            20,
+            currentPage + 1,
+            10,
             query,
             store.animeCatalogStore.sortType,
             store.animeCatalogStore.sortBy,
@@ -32,15 +33,38 @@ export const AllAnimes = ({}) => {
             store.animeCatalogStore.episodes_start,
             store.animeCatalogStore.episodes_end,
          )
+
          setAnimes((prevData) => [...prevData, ...data])
-         setCurrentPage(currentPage + 1)
+         setCurrentPage((prev) => prev + 1)
       } catch (error) {
          console.error(error)
       }
    }
 
+   const fetchAnimes = async () => {
+      try {
+         const { data } = await fetchAnimeList(
+            1,
+            10,
+            query,
+            store.animeCatalogStore.sortType,
+            store.animeCatalogStore.sortBy,
+            store.animeCatalogStore.genres.join(','),
+            store.animeCatalogStore.kinds.join(','),
+            store.animeCatalogStore.mpaa.join(','),
+            store.animeCatalogStore.year_start,
+            store.animeCatalogStore.year_end,
+            store.animeCatalogStore.episodes_start,
+            store.animeCatalogStore.episodes_end,
+         )
+         setAnimes(data)
+      } catch (e) {
+         console.log(e)
+      }
+   }
+
    useEffect(() => {
-      fetchMore()
+      fetchAnimes()
    }, [sortType, sortBy, genres, kinds, mpaa, year_start, year_end, episodes_start, episodes_end])
 
    const navigation = useNavigation()
@@ -60,8 +84,8 @@ export const AllAnimes = ({}) => {
             keyExtractor={(item) => item._id.toString()}
             onEndReached={fetchMore}
             bounces={true}
-            overScrollMode="never"
+            overScrollMode='never'
          />
       </View>
    )
-}
+})

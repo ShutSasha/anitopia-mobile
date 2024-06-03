@@ -3,13 +3,13 @@ import { TouchableOpacity, View, Text } from 'react-native'
 import { styles } from './styles'
 import { Ionicons } from '@expo/vector-icons'
 
-export const CustomRadiobutton = ({ children, selectedOption, setSelectedOption, fontSize }) => {
+export const CustomRadiobutton = ({ children, value, selectedOption, setSelectedOption, fontSize }) => {
    return (
       <View style={styles.rootContainer}>
          <TouchableOpacity
             style={styles.optionContainer}
             onPress={() => {
-               setSelectedOption(children)
+               setSelectedOption(value, children)
             }}
          >
             <Ionicons
