@@ -24,7 +24,7 @@ export const RatedAnimeCard = ({ ratedAnime, userRating, index, count }) => {
    }, [])
 
    const handleCardPress = () => {
-      navigation.navigate('AnimePage', { anime: anime })
+      navigation.navigate('AnimePage', { animeID: anime._id })
    }
 
    const formatUserRating = (rating) => {
