@@ -9,7 +9,7 @@ import styles from './styles'
 export const AnimePage = ({ route }) => {
    const { animeID } = route.params
    const animeInfo = useFetchAnimeID(animeID)
-
+   const fetchAnimeInfo = () => useFetchAnimeID(animeID)
    if (!animeInfo) {
       return <ActivityIndicator size='large' color='#0000ff' />
    }
@@ -18,7 +18,7 @@ export const AnimePage = ({ route }) => {
       <>
          <Header />
          <ScrollView style={styles.mainContainer}>
-            <AnimeInfo animeInfo={animeInfo} />
+            <AnimeInfo animeInfo={animeInfo} fetchAnimeInfo={fetchAnimeInfo} />
             <AnimeComments animeID={animeID} />
          </ScrollView>
       </>

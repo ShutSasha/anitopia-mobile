@@ -30,7 +30,6 @@ export const fetchAnimeList = async (
             episodes_end: episodes_end,
          },
       })
-      console.log(data)
       return data
    } catch (error) {
       console.log(error)

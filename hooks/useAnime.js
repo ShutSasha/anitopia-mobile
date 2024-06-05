@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import $api from '../app/http'
 import { transformResponseToAnime } from '../shared/lib/anime/transform-anime-info-response'
 

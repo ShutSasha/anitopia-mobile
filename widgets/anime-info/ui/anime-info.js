@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { WebView } from 'react-native-webview'
-import { View, Text, Image } from 'react-native'
 import Ratings from '../../../shared/lib/anime/ratings'
+import { RatingModal } from '../../../shared/lib/anime/rating-modal'
 import styles from './styles'
 import { getAnimeInfoProperties } from '../const/anime-info-properties'
 
-export const AnimeInfo = ({ animeInfo }) => {
+export const AnimeInfo = ({ animeInfo, fetchAnimeInfo }) => {
    const [animeInfoData, setAnimeInfo] = useState([])
+   const [isModalVisible, setIsModalVisible] = useState(false)
    const imagePath = `https://shikimori.one/system/animes/original/${animeInfo.shikimori_id}.jpg`
+
    useEffect(() => {
       const animeInfoResponse = getAnimeInfoProperties(animeInfo)
       setAnimeInfo(animeInfoResponse)
@@ -19,7 +22,9 @@ export const AnimeInfo = ({ animeInfo }) => {
             <Text style={styles.title}>{animeInfo.title || 'Назва невідома'}</Text>
          </View>
          <View style={styles.contentContainer}>
-            <Image source={{ uri: imagePath || 'default_poster_uri' }} style={styles.poster} />
+            <TouchableOpacity onPress={() => setIsModalVisible(true)}>
+               <Image source={{ uri: imagePath || 'default_poster_uri' }} style={styles.poster} />
+            </TouchableOpacity>
             <View style={styles.infoContainer}>
                <Ratings material_data={animeInfo.material_data} />
                {animeInfoData &&
@@ -50,6 +55,12 @@ export const AnimeInfo = ({ animeInfo }) => {
                <Text style={styles.info}>Відсутні</Text>
             )}
          </View>
+         <RatingModal
+            visible={isModalVisible}
+            onClose={() => setIsModalVisible(false)}
+            animeInfo={animeInfo}
+            fetchAnimeInfo={fetchAnimeInfo}
+         />
       </>
    )
 }

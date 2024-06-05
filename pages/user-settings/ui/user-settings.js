@@ -17,34 +17,45 @@ export const UserSettings = () => {
    const navigation = useNavigation()
    const { store } = useStore()
 
-   const [firstName, setFirstName] = useState(store.user.firstName)
-   const [lastName, setLastName] = useState(store.user.lastName)
-   const [age, setAge] = useState(store.user.age.toString())
-   const [sex, setSex] = useState(store.user.sex)
-   const [country, setCountry] = useState(store.user.country)
-   const [about, setAbout] = useState(store.about)
-   const [error, setError] = useState(false)
+   const [firstName, setFirstName] = useState(store.user?.firstName || '')
+   const [lastName, setLastName] = useState(store.user?.lastName || '')
+   const [age, setAge] = useState(store.user?.age?.toString() || '')
+   const [sex, setSex] = useState(store.user?.sex || '')
+   const [country, setCountry] = useState(store.user?.country || '')
+   const [about, setAbout] = useState(store.about || '')
+   const [error, setError] = useState('')
 
    const handleFirstNameChange = (text) => {
       setFirstName(text)
    }
+
    const handleLastNameChange = (text) => {
       setLastName(text)
    }
+
    const handleAgeChange = (text) => {
       setAge(text)
    }
+
    const handleSexChange = (text) => {
       setSex(text)
    }
+
    const handleCountryChange = (text) => {
       setCountry(text)
    }
+
    const handleAboutChange = (text) => {
       setAbout(text)
    }
+
    const handleChangeData = async () => {
-      console.log(store)
+      if (isNaN(age) || age <= 0) {
+         setError('Please enter a valid age.')
+         return
+      }
+
+      setError('')
       try {
          const { data } = await $api.put(`/api/users/${store.user.id}/personal-data`, {
             firstName: firstName,
@@ -55,7 +66,6 @@ export const UserSettings = () => {
             about: about,
          })
          store.setUser({ id: data._id, ...data })
-         console.log(store)
          store.setAbout(about)
          navigation.navigate('Profile')
       } catch (err) {

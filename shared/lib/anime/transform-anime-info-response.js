@@ -21,7 +21,7 @@ const AiredEpisodesValidation = (lastEpisode, episodesAired, totalEpisodes, stat
 }
 
 export const transformResponseToAnime = (res) => {
-   const { id, title,shikimori_id, link, last_episode, year, material_data } = res.data
+   const { _id, title, shikimori_id, link, last_episode, year, material_data } = res.data
 
    const {
       episodes_aired,
@@ -35,7 +35,7 @@ export const transformResponseToAnime = (res) => {
    } = material_data
 
    return {
-      id,
+      _id,
       title: title,
       link,
       shikimori_id,

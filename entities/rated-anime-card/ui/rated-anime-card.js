@@ -15,8 +15,8 @@ export const RatedAnimeCard = ({ ratedAnime, userRating, index, count }) => {
          try {
             const { data } = await $api.get(`/api/anime/${animeId}`)
             setAnime(data)
-         } catch (e) {
-            console.log(e)
+         } catch (error) {
+            console.log(error)
          }
       }
 
