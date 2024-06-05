@@ -1,40 +1,51 @@
-/* import React, { useEffect, useState } from 'react'
-import { TouchableOpacity, Image, Text } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { TouchableOpacity, Image, Alert } from 'react-native'
 import Like from '../../../assets/thumbs-up-50px-icon.png'
+import LikeHover from '../../../assets/thumbs-up-50px-icon-hover.png'
+import { useStore } from '../../../hooks/useStore'
 import $api from '../../../app/http'
 
-export const LikeComment = ({ commentId }) => {
+export const LikeComment = ({ commentId, fetchCommentByAnimeID, isLiked, setIsLiked, isDisliked, setIsDisliked }) => {
+   const { store } = useStore()
    const [likes, setLikes] = useState(0)
-   const [isLiked, setIsLiked] = useState(false)
 
    const fetchLikes = async () => {
       try {
          const { data } = await $api.get(`/api/comments/like/${commentId}`)
          setLikes(data.likes)
-         setIsLiked(data.isLiked)
-      } catch (error) {
-         console.log(error)
+      } catch (e) {
+         console.error(e)
       }
    }
 
    const handleLike = async () => {
+      if (!store.user || !store.user.id) {
+         Alert.alert('Будь-ласка авторизуйтеся в системі для того, щоб поставити лайк')
+         return
+      }
       try {
-         const { data } = await $api.patch(`/api/comments/like`, { commentId })
+         const { data } = await $api.patch(`/api/comments/like`, {
+            commentId: commentId,
+            userId: store.user.id,
+         })
          setLikes(data.likes)
          setIsLiked(!isLiked)
-      } catch (error) {
-         console.log(error)
+         if (isDisliked) {
+            setIsDisliked(false)
+         }
+         fetchCommentByAnimeID()
+      } catch (e) {
+         console.error(e)
       }
    }
 
    useEffect(() => {
       fetchLikes()
-   }, [])
+   }, [commentId])
 
    return (
-      <TouchableOpacity onPress={handleLike} style={{ flexDirection: 'row', alignItems: 'center' }}>
-         <Image source={Like} style={{ width: 20, height: 20 }} />
-         <Text>{likes}</Text>
+      <TouchableOpacity onPress={handleLike}>
+         <Image source={isLiked ? LikeHover : Like} style={{ width: 25, height: 25 }} />
       </TouchableOpacity>
    )
-}*/
+}

@@ -22,15 +22,17 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.cdidk.anitopiamobile"
+      "package": "com.ivanov_yaroslav.anitopiamobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [],
+    "plugins": [
+      "expo-font"
+    ],
     "extra": {
       "eas": {
-        "projectId": "58ca6335-16d2-4031-855e-e0ee05cd9f17"
+        "projectId": "f936ac4e-192c-4560-9ceb-ab596c00bf35"
       }
     }
   }

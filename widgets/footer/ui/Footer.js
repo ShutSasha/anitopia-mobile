@@ -4,7 +4,6 @@ import { styles } from './styles'
 import MainPageIcon from '../../../assets/main-page-icon.svg'
 import CatalogIcon from '../../../assets/catalog-icon.svg'
 import SearchIcon from '../../../assets/search-icon.svg'
-import CollectionsIcon from '../../../assets/collection-icon.svg'
 import MenuIcon from '../../../assets/menu-icon.svg'
 import { useNavigation } from '@react-navigation/native'
 
@@ -15,7 +14,6 @@ export const Footer = () => {
       { label: 'Головна', onPress: () => navigation.navigate('HomeStack'), Icon: MainPageIcon },
       { label: 'Каталог', onPress: () => navigation.navigate('CatalogStack'), Icon: CatalogIcon },
       { label: 'Пошук', onPress: () => navigation.navigate('SearchStack'), Icon: SearchIcon },
-      { label: 'Колекції', onPress: () => console.log('Колекції'), Icon: CollectionsIcon },
       { label: 'Меню', onPress: () => navigation.openDrawer(), Icon: MenuIcon },
    ]
 

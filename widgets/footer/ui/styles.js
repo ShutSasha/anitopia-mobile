@@ -14,8 +14,8 @@ export const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      paddingLeft: 10,
-      paddingRight: 10,
+      paddingLeft: 20,
+      paddingRight: 20,
       paddingBottom: Platform.OS === 'ios' ? 3 : 15,
    },
 

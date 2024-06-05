@@ -32,6 +32,7 @@ export default StyleSheet.create({
    },
 
    info: {
+      paddingRight: 50,
       paddingBottom: 5,
       width: '100%',
       display: 'flex',
@@ -53,7 +54,7 @@ export default StyleSheet.create({
       textAlign: 'center',
       marginTop: 20,
    },
-   
+
    screenshotsWrapper: {
       flexDirection: 'row',
       flexWrap: 'wrap',

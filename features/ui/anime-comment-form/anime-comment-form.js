@@ -21,7 +21,6 @@ export const AnimeCommentForm = ({ animeID, onCommentAdded }) => {
          })
 
          if (res.status === 201) {
-            console.log('success')
             setCommentText('')
             onCommentAdded && onCommentAdded()
          }
