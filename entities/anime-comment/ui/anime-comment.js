@@ -20,11 +20,10 @@ export const AnimeComment = ({ comment, fetchCommentByAnimeID }) => {
    const inputRef = useRef(null)
 
    const handleUpdateComment = async () => {
-      const updateUrl = `/api/comments/${comment._id}`
-
       try {
-         const res = await $api.patch(updateUrl, {
-            commentText: editText,
+         const res = await $api.patch(`/api/comments/`, {
+            comment_id: comment._id,
+            new_comment_text: editText,
          })
 
          if (res.status === 200) {
